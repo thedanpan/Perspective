@@ -8,3 +8,6 @@ An app that invites a collaboration of perspectives
 - Daniella Shin
 
 ## [Trello](https://trello.com/b/BvG14dyF/perspective)
+
+- [Models](https://trello-attachments.s3.amazonaws.com/54de68cf0c2520a35b8e66f8/1632x918/a878dc908010d09df703e44ca5b2af81/WP_20150213_002.jpg)
+- [Wireframes](https://trello-attachments.s3.amazonaws.com/54de694586b1de003980d96b/1200x675/1f76e8b2c1445c481f0ae05deccaea47/WP_20150212_010.jpg)

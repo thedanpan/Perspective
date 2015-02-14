@@ -26,6 +26,8 @@
 		0942F9251A8EA68200B5D566 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0942F91A1A8EA68200B5D566 /* Security.framework */; };
 		0942F9261A8EA68200B5D566 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0942F91B1A8EA68200B5D566 /* StoreKit.framework */; };
 		0942F9271A8EA68200B5D566 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0942F91C1A8EA68200B5D566 /* SystemConfiguration.framework */; };
+		0942F92F1A8EC74300B5D566 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0942F92E1A8EC74300B5D566 /* LoginVC.swift */; };
+		0942F9311A8EC87400B5D566 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0942F9301A8EC87400B5D566 /* SignupVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		0942F91B1A8EA68200B5D566 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		0942F91C1A8EA68200B5D566 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0942F92B1A8EAA3A00B5D566 /* Perspective-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Perspective-Bridging-Header.h"; sourceTree = "<group>"; };
+		0942F92E1A8EC74300B5D566 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		0942F9301A8EC87400B5D566 /* SignupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,8 @@
 				0942F8F61A8EA5A200B5D566 /* LaunchScreen.xib */,
 				0942F8EB1A8EA5A200B5D566 /* Supporting Files */,
 				0942F92B1A8EAA3A00B5D566 /* Perspective-Bridging-Header.h */,
+				0942F92E1A8EC74300B5D566 /* LoginVC.swift */,
+				0942F9301A8EC87400B5D566 /* SignupVC.swift */,
 			);
 			path = Perspective;
 			sourceTree = "<group>";
@@ -274,8 +280,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0942F9311A8EC87400B5D566 /* SignupVC.swift in Sources */,
 				0942F8F01A8EA5A200B5D566 /* ViewController.swift in Sources */,
 				0942F8EE1A8EA5A200B5D566 /* AppDelegate.swift in Sources */,
+				0942F92F1A8EC74300B5D566 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

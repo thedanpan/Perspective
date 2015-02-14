@@ -91,10 +91,18 @@
                                     <segue destination="DYg-Yb-tCx" kind="modal" identifier="" id="IpR-CN-d4w"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j1r-Py-kqn">
+                                <rect key="frame" x="16" y="115" width="382" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="txtIncompleteFieldsMessage" destination="j1r-Py-kqn" id="8mR-ko-lLv"/>
                         <outlet property="txtPassword" destination="ghq-5F-3mh" id="XUO-ok-w9E"/>
                         <outlet property="txtUsername" destination="bzA-vg-7lo" id="1tT-Xp-wKR"/>
                     </connections>
@@ -156,7 +164,7 @@
                                     <action selector="loginVerifyButton:" destination="DYg-Yb-tCx" eventType="touchUpInside" id="e7Z-3c-DFn"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1sl-WP-PwC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1sl-WP-PwC">
                                 <rect key="frame" x="106" y="113" width="202" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>

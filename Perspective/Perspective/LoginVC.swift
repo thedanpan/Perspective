@@ -10,6 +10,8 @@ import UIKit
 
 class LoginVC: UIViewController {
 
+    @IBOutlet weak var txtIncompleteFieldsMessage: UILabel!
+    
     @IBOutlet weak var txtUsername: UITextField!
     
     @IBOutlet weak var txtPassword: UITextField!
@@ -27,6 +29,35 @@ class LoginVC: UIViewController {
     
     @IBAction func signinTapped(sender: UIButton) {
         // Authentication Code
+        
+        var usrEntered = txtUsername.text
+        var pwdEntered = txtPassword.text
+        
+        func userLogIn(){
+            
+            PFUser.logInWithUsernameInBackground(usrEntered, password:pwdEntered) {
+                (user: PFUser!, error: NSError!) -> Void in
+                if user != nil {
+                    self.txtIncompleteFieldsMessage.text = "Logged in!"
+                } else {
+                    // The login failed. Check error to see why.
+                }
+            }
+        }
+        
+            
+        if usrEntered != "" && pwdEntered != "" {
+            userLogIn()
+        } else {
+            self.txtIncompleteFieldsMessage.text = "All Fields Required"
+        }
+        
+    }
+
+        
+        
+        
+       
     }
     
 
@@ -40,4 +71,5 @@ class LoginVC: UIViewController {
     }
     */
 
-}
+
+

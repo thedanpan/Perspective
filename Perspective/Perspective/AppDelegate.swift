@@ -20,10 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Parse.setApplicationId("", clientKey: "")
         
-        var testObject:PFObject = PFObject(className: "TestObject")
-        testObject.setObject("user2", forKey: "user")
-        
-        testObject.saveInBackgroundWithTarget(nil, selector: nil)
 
         return true
     }

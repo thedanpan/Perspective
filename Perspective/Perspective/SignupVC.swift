@@ -32,6 +32,9 @@ class SignupVC: UIViewController {
                 (succeded: Bool!, error: NSError!) -> Void in
                 if error == nil {
                     //Hooray!
+                    let dash = DashboardVC()
+                    let navController = UINavigationController(rootViewController: dash)
+                    navController.popToRootViewControllerAnimated(false)
                     self.txtIncompleteFieldsMessage.text = "User Signed Up";
                 } else {
                     //Show the errorString

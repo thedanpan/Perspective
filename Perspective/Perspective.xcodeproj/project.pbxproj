@@ -11,6 +11,8 @@
 		09360ADD1A8FD9E9005972F5 /* DashboardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09360ADB1A8FD9E9005972F5 /* DashboardVC.xib */; };
 		09360AE21A912B08005972F5 /* StoryfieldsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09360AE01A912B08005972F5 /* StoryfieldsVC.swift */; };
 		09360AE31A912B08005972F5 /* StoryfieldsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09360AE11A912B08005972F5 /* StoryfieldsVC.xib */; };
+		09360AE61A91437B005972F5 /* RecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09360AE41A91437B005972F5 /* RecordVC.swift */; };
+		09360AE71A91437B005972F5 /* RecordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09360AE51A91437B005972F5 /* RecordVC.xib */; };
 		0942F8EE1A8EA5A200B5D566 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0942F8ED1A8EA5A200B5D566 /* AppDelegate.swift */; };
 		0942F8F31A8EA5A200B5D566 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0942F8F11A8EA5A200B5D566 /* Main.storyboard */; };
 		0942F8F51A8EA5A200B5D566 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0942F8F41A8EA5A200B5D566 /* Images.xcassets */; };
@@ -48,6 +50,8 @@
 		09360ADB1A8FD9E9005972F5 /* DashboardVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardVC.xib; sourceTree = "<group>"; };
 		09360AE01A912B08005972F5 /* StoryfieldsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryfieldsVC.swift; sourceTree = "<group>"; };
 		09360AE11A912B08005972F5 /* StoryfieldsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoryfieldsVC.xib; sourceTree = "<group>"; };
+		09360AE41A91437B005972F5 /* RecordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordVC.swift; sourceTree = "<group>"; };
+		09360AE51A91437B005972F5 /* RecordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordVC.xib; sourceTree = "<group>"; };
 		0942F8E81A8EA5A200B5D566 /* Perspective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Perspective.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0942F8EC1A8EA5A200B5D566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0942F8ED1A8EA5A200B5D566 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 				09360ADB1A8FD9E9005972F5 /* DashboardVC.xib */,
 				09360AE01A912B08005972F5 /* StoryfieldsVC.swift */,
 				09360AE11A912B08005972F5 /* StoryfieldsVC.xib */,
+				09360AE41A91437B005972F5 /* RecordVC.swift */,
+				09360AE51A91437B005972F5 /* RecordVC.xib */,
 			);
 			path = Perspective;
 			sourceTree = "<group>";
@@ -270,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0942F8F31A8EA5A200B5D566 /* Main.storyboard in Resources */,
+				09360AE71A91437B005972F5 /* RecordVC.xib in Resources */,
 				09360ADD1A8FD9E9005972F5 /* DashboardVC.xib in Resources */,
 				0942F8F81A8EA5A200B5D566 /* LaunchScreen.xib in Resources */,
 				09360AE31A912B08005972F5 /* StoryfieldsVC.xib in Resources */,
@@ -294,6 +301,7 @@
 				0942F9311A8EC87400B5D566 /* SignupVC.swift in Sources */,
 				09360AE21A912B08005972F5 /* StoryfieldsVC.swift in Sources */,
 				09360ADC1A8FD9E9005972F5 /* DashboardVC.swift in Sources */,
+				09360AE61A91437B005972F5 /* RecordVC.swift in Sources */,
 				0942F8EE1A8EA5A200B5D566 /* AppDelegate.swift in Sources */,
 				0942F92F1A8EC74300B5D566 /* LoginVC.swift in Sources */,
 			);

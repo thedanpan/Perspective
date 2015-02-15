@@ -24,10 +24,16 @@ class StoryfieldsVC: UIViewController {
         var numOfClipsEntered = numOfClips.text.toInt()
         
         func createStory(){
+            var currentUser = PFUser.currentUser()
+            
             var story = PFObject(className: "Story")
             story["theme"] = themeEntered
             story["clipDuration"] = clipDurationEntered
             story["numOfClips"] = numOfClipsEntered
+            story["owner"] = currentUser.username
+            story["sender"] = currentUser.username
+            story["receiver"] = ""
+            
             story.saveInBackgroundWithBlock {
                 (success: Bool, error: NSError!) -> Void in
                 if (success) {

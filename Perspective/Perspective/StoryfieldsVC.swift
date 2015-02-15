@@ -9,6 +9,11 @@
 import UIKit
 
 class StoryfieldsVC: UIViewController {
+    
+    @IBOutlet weak var theme: UITextField!
+    @IBOutlet weak var clipDuration: UITextField!
+    @IBOutlet weak var numofClips: UITextField!
+    @IBOutlet weak var searchFriends: UISearchBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()

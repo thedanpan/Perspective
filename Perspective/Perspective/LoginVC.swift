@@ -15,9 +15,21 @@ class LoginVC: UIViewController {
     @IBOutlet weak var txtUsername: UITextField!
     
     @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var displayUsername: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var currentUser = PFUser.currentUser()
+        if currentUser != nil {
+            // Do stuff with the user
+            self.displayUsername.text = currentUser.username
+        } else {
+            // Show the signup or login screen
+        }
+        
+        
 
         // Do any additional setup after loading the view.
     }
@@ -34,32 +46,27 @@ class LoginVC: UIViewController {
         var pwdEntered = txtPassword.text
         
         func userLogIn(){
-            
             PFUser.logInWithUsernameInBackground(usrEntered, password:pwdEntered) {
-                (user: PFUser!, error: NSError!) -> Void in
-                if user != nil {
-                    self.txtIncompleteFieldsMessage.text = "Logged in!"
-                } else {
-                    // The login failed. Check error to see why.
+                    (user: PFUser!, error: NSError!) -> Void in
+                        if user != nil {
+                            self.dismissViewControllerAnimated(true, completion: nil)
+                            self.txtIncompleteFieldsMessage.text = "Logged in!"
+                        } else {
+                            self.txtIncompleteFieldsMessage.text = "The login failed. Check error to see why."
+                        }
                 }
-            }
         }
-        
             
         if usrEntered != "" && pwdEntered != "" {
-            userLogIn()
+           userLogIn()
         } else {
-            self.txtIncompleteFieldsMessage.text = "All Fields Required"
+           self.txtIncompleteFieldsMessage.text = "All Fields Required"
         }
-        
-    }
-
-        
-        
-        
        
     }
     
+}
+
 
     /*
     // MARK: - Navigation

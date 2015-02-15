@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09360ADC1A8FD9E9005972F5 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09360ADA1A8FD9E9005972F5 /* DashboardVC.swift */; };
+		09360ADD1A8FD9E9005972F5 /* DashboardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09360ADB1A8FD9E9005972F5 /* DashboardVC.xib */; };
 		0942F8EE1A8EA5A200B5D566 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0942F8ED1A8EA5A200B5D566 /* AppDelegate.swift */; };
-		0942F8F01A8EA5A200B5D566 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0942F8EF1A8EA5A200B5D566 /* ViewController.swift */; };
 		0942F8F31A8EA5A200B5D566 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0942F8F11A8EA5A200B5D566 /* Main.storyboard */; };
 		0942F8F51A8EA5A200B5D566 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0942F8F41A8EA5A200B5D566 /* Images.xcassets */; };
 		0942F8F81A8EA5A200B5D566 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0942F8F61A8EA5A200B5D566 /* LaunchScreen.xib */; };
@@ -41,10 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09360ADA1A8FD9E9005972F5 /* DashboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		09360ADB1A8FD9E9005972F5 /* DashboardVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardVC.xib; sourceTree = "<group>"; };
 		0942F8E81A8EA5A200B5D566 /* Perspective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Perspective.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0942F8EC1A8EA5A200B5D566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0942F8ED1A8EA5A200B5D566 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0942F8EF1A8EA5A200B5D566 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0942F8F21A8EA5A200B5D566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0942F8F41A8EA5A200B5D566 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0942F8F71A8EA5A200B5D566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -123,7 +125,6 @@
 			children = (
 				0942F90D1A8EA5D400B5D566 /* Frameworks */,
 				0942F8ED1A8EA5A200B5D566 /* AppDelegate.swift */,
-				0942F8EF1A8EA5A200B5D566 /* ViewController.swift */,
 				0942F8F11A8EA5A200B5D566 /* Main.storyboard */,
 				0942F8F41A8EA5A200B5D566 /* Images.xcassets */,
 				0942F8F61A8EA5A200B5D566 /* LaunchScreen.xib */,
@@ -131,6 +132,8 @@
 				0942F92B1A8EAA3A00B5D566 /* Perspective-Bridging-Header.h */,
 				0942F92E1A8EC74300B5D566 /* LoginVC.swift */,
 				0942F9301A8EC87400B5D566 /* SignupVC.swift */,
+				09360ADA1A8FD9E9005972F5 /* DashboardVC.swift */,
+				09360ADB1A8FD9E9005972F5 /* DashboardVC.xib */,
 			);
 			path = Perspective;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0942F8F31A8EA5A200B5D566 /* Main.storyboard in Resources */,
+				09360ADD1A8FD9E9005972F5 /* DashboardVC.xib in Resources */,
 				0942F8F81A8EA5A200B5D566 /* LaunchScreen.xib in Resources */,
 				0942F8F51A8EA5A200B5D566 /* Images.xcassets in Resources */,
 			);
@@ -281,7 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0942F9311A8EC87400B5D566 /* SignupVC.swift in Sources */,
-				0942F8F01A8EA5A200B5D566 /* ViewController.swift in Sources */,
+				09360ADC1A8FD9E9005972F5 /* DashboardVC.swift in Sources */,
 				0942F8EE1A8EA5A200B5D566 /* AppDelegate.swift in Sources */,
 				0942F92F1A8EC74300B5D566 /* LoginVC.swift in Sources */,
 			);
@@ -488,6 +492,7 @@
 				0942F9091A8EA5A200B5D566 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0942F90A1A8EA5A200B5D566 /* Build configuration list for PBXNativeTarget "PerspectiveTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +501,7 @@
 				0942F90C1A8EA5A200B5D566 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

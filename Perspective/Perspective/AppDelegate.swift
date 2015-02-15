@@ -21,12 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let dash = DashboardVC()
         let navController = UINavigationController(rootViewController: dash)
-        
-//        window = UIWindow(frame: UIScreen.mainScreen().bounds)
-//        let dash = DashboardVC()
-//        window!.rootViewController = dash
-//        window!.backgroundColor = UIColor.whiteColor()
-//        window!.makeKeyAndVisible()
+
         
         
         return true

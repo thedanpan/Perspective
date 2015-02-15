@@ -10,9 +10,23 @@ import UIKit
 
 class DashboardVC: UIViewController {
 
+    @IBOutlet weak var usernameText: UILabel!
+    
+    
+    @IBAction func displayUsername(){
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        var currentUser = PFUser.currentUser()
+        if currentUser != nil {
+            // Do stuff with the user
+            self.usernameText.text = currentUser.username
+        } else {
+            self.usernameText.text = "No current user!!"
+        }
+        
         // Do any additional setup after loading the view.
     }
 
@@ -21,6 +35,19 @@ class DashboardVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+
+    @IBAction func logout(sender: UIButton) {
+        PFUser.logOut()
+        var currentUser = PFUser.currentUser()
+        if let navController = self.navigationController {
+            navController.popViewControllerAnimated(true)
+        }
+    }
+    
+    
+    @IBAction func unwindToDash(segue: UIStoryboardSegue) {
+    }
+
 
     /*
     // MARK: - Navigation

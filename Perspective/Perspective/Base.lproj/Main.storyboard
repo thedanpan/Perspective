@@ -82,6 +82,22 @@
             </objects>
             <point key="canvasLocation" x="813" y="-238"/>
         </scene>
+        <!--RecordVC-->
+        <scene sceneID="azX-7N-52v">
+            <objects>
+                <viewController title="RecordVC" id="ymf-KA-qsi" customClass="RecordVC" customModule="Perspective" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jew-I0-ytr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="n57-Sz-Veo"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eqY-ZS-3aa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="813" y="540"/>
+        </scene>
         <!--StoryfieldsVC-->
         <scene sceneID="Jil-dU-fdD">
             <objects>
@@ -180,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g0P-Xa-6rV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="812" y="542"/>
+            <point key="canvasLocation" x="1308" y="540"/>
         </scene>
         <!--DashboardVC.swift-->
         <scene sceneID="bYs-kI-CLg">
@@ -215,7 +231,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="9Rr-0M-2x3" kind="push" id="QXn-FZ-XKB"/>
+                                    <segue destination="ymf-KA-qsi" kind="push" id="9dz-oc-wnl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PCH-4O-tYW">

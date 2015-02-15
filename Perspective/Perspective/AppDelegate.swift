@@ -11,16 +11,24 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+     var window: UIWindow?
 
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        
         Parse.setApplicationId("", clientKey: "")
         
-
+        let dash = DashboardVC()
+        let navController = UINavigationController(rootViewController: dash)
+        
+//        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//        let dash = DashboardVC()
+//        window!.rootViewController = dash
+//        window!.backgroundColor = UIColor.whiteColor()
+//        window!.makeKeyAndVisible()
+        
+        
         return true
     }
 

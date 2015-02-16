@@ -14,6 +14,7 @@ class StoryfieldsVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var clipDuration: UITextField!
     @IBOutlet weak var numOfClips: UITextField!
     @IBOutlet weak var searchFriends: UISearchBar!
+    var url: String!
 
     @IBOutlet weak var txtIncompleteFieldsMessage: UILabel!
     
@@ -54,8 +55,8 @@ class StoryfieldsVC: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
+        println("the url is: \(self.url)")
     }
     
     override func didReceiveMemoryWarning() {

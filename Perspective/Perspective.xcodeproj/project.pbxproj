@@ -52,7 +52,7 @@
 		09360AE11A912B08005972F5 /* StoryfieldsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoryfieldsVC.xib; sourceTree = "<group>"; };
 		09360AE41A91437B005972F5 /* RecordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordVC.swift; sourceTree = "<group>"; };
 		09360AE51A91437B005972F5 /* RecordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordVC.xib; sourceTree = "<group>"; };
-		09360B181A916BE6005972F5 /* Perspective-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Perspective-Bridging-Header.h"; sourceTree = "<group>"; };
+		09360B1B1A9172D0005972F5 /* Perspective-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Perspective-Bridging-Header.h"; sourceTree = "<group>"; };
 		0942F8E81A8EA5A200B5D566 /* Perspective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Perspective.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0942F8EC1A8EA5A200B5D566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0942F8ED1A8EA5A200B5D566 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 				09360AE11A912B08005972F5 /* StoryfieldsVC.xib */,
 				09360AE41A91437B005972F5 /* RecordVC.swift */,
 				09360AE51A91437B005972F5 /* RecordVC.xib */,
-				09360B181A916BE6005972F5 /* Perspective-Bridging-Header.h */,
+				09360B1B1A9172D0005972F5 /* Perspective-Bridging-Header.h */,
 			);
 			path = Perspective;
 			sourceTree = "<group>";
@@ -434,7 +434,7 @@
 				INFOPLIST_FILE = Perspective/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Perspective/Perspective-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Perspective-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -451,7 +451,7 @@
 				INFOPLIST_FILE = Perspective/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Perspective/Perspective-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Perspective-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StoryfieldsVC: UIViewController {
+class StoryfieldsVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var theme: UITextField!
     @IBOutlet weak var clipDuration: UITextField!
@@ -61,6 +61,17 @@ class StoryfieldsVC: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
+    }
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        theme.endEditing(true)
+        clipDuration.endEditing(true)
+        numOfClips.endEditing(true)
     }
 
     /*

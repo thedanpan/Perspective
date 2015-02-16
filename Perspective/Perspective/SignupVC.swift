@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignupVC: UIViewController {
+class SignupVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var txtIncompleteFieldsMessage: UILabel!
     @IBOutlet weak var txtUsername: UITextField!
@@ -56,6 +56,17 @@ class SignupVC: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
+    }
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        txtUsername.endEditing(true)
+        txtEmail.endEditing(true)
+        txtPassword.endEditing(true)
     }
     
 

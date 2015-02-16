@@ -8,13 +8,13 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var txtIncompleteFieldsMessage: UILabel!
     
     @IBOutlet weak var txtUsername: UITextField!
-    
     @IBOutlet weak var txtPassword: UITextField!
+    
     @IBOutlet weak var displayUsername: UILabel!
     
     
@@ -28,8 +28,6 @@ class LoginVC: UIViewController {
         } else {
             // Show the signup or login screen
         }
-        
-        
 
         // Do any additional setup after loading the view.
     }
@@ -37,6 +35,16 @@ class LoginVC: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
+    }
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        txtUsername.endEditing(true)
+        txtPassword.endEditing(true)
     }
     
     @IBAction func signinTapped(sender: UIButton) {

@@ -9,14 +9,11 @@
 import UIKit
 
 class LoginVC: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var txtIncompleteFieldsMessage: UILabel!
     
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
-    
-    @IBOutlet weak var displayUsername: UILabel!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +21,13 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         var currentUser = PFUser.currentUser()
         if currentUser != nil {
             // Do stuff with the user
-            self.displayUsername.text = currentUser.username
         } else {
             // Show the signup or login screen
         }
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -55,36 +51,36 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
         func userLogIn(){
             PFUser.logInWithUsernameInBackground(usrEntered, password:pwdEntered) {
-                    (user: PFUser!, error: NSError!) -> Void in
-                        if user != nil {
-                            self.dismissViewControllerAnimated(true, completion: nil)
-                            self.txtIncompleteFieldsMessage.text = "Logged in!"
-                        } else {
-                            self.txtIncompleteFieldsMessage.text = "The login failed. Check error to see why."
-                        }
+                (user: PFUser!, error: NSError!) -> Void in
+                if user != nil {
+                    self.txtIncompleteFieldsMessage.text = "Log in successful."
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                } else {
+                    self.txtIncompleteFieldsMessage.text = "Log in failed. Please try again."
                 }
+            }
         }
-            
+        
         if usrEntered != "" && pwdEntered != "" {
-           userLogIn()
+            userLogIn()
         } else {
-           self.txtIncompleteFieldsMessage.text = "All Fields Required"
+            self.txtIncompleteFieldsMessage.text = "All Fields Required"
         }
-       
+        
     }
     
 }
 
 
-    /*
-    // MARK: - Navigation
+/*
+// MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+// Get the new view controller using segue.destinationViewController.
+// Pass the selected object to the new view controller.
+}
+*/
 
 
 

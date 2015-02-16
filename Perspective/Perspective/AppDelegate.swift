@@ -21,10 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let credentialsProvider = AWSCognitoCredentialsProvider.credentialsWithRegionType(
             AWSRegionType.USEast1,
-            accountId: "903362674655",
-            identityPoolId: "us-east-1:2e321e2b-0ae3-42be-aec8-480025f4e140",
-            unauthRoleArn: "arn:aws:iam::903362674655:role/Cognito_PerspectiveUnauth_DefaultRole",
-            authRoleArn: "arn:aws:iam::903362674655:role/Cognito_PerspectiveAuth_DefaultRole")
+            accountId: "",
+            identityPoolId: "",
+            unauthRoleArn: "",
+            authRoleArn: "")
         let defaultServiceConfiguration = AWSServiceConfiguration(
             region: AWSRegionType.USEast1,
             credentialsProvider: credentialsProvider)

@@ -67,7 +67,7 @@ class RecordVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         // var indent:NSString = "closr"
         var uploadRequest:AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
         uploadRequest.bucket = "theperspectiveapp"
-        uploadRequest.key = "testfile.mp4"
+        uploadRequest.key = "testfile2.mp4"
         uploadRequest.contentType = "video/mp4"
         uploadRequest.body = fileUrl
         uploadRequest.uploadProgress = { (bytesSent:Int64, totalBytesSent:Int64,  totalBytesExpectedToSend:Int64) -> Void in

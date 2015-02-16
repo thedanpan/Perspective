@@ -52,6 +52,7 @@
 		09360AE11A912B08005972F5 /* StoryfieldsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoryfieldsVC.xib; sourceTree = "<group>"; };
 		09360AE41A91437B005972F5 /* RecordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordVC.swift; sourceTree = "<group>"; };
 		09360AE51A91437B005972F5 /* RecordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordVC.xib; sourceTree = "<group>"; };
+		09360B181A916BE6005972F5 /* Perspective-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Perspective-Bridging-Header.h"; sourceTree = "<group>"; };
 		0942F8E81A8EA5A200B5D566 /* Perspective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Perspective.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0942F8EC1A8EA5A200B5D566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0942F8ED1A8EA5A200B5D566 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +75,6 @@
 		0942F91A1A8EA68200B5D566 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		0942F91B1A8EA68200B5D566 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		0942F91C1A8EA68200B5D566 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		0942F92B1A8EAA3A00B5D566 /* Perspective-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Perspective-Bridging-Header.h"; sourceTree = "<group>"; };
 		0942F92E1A8EC74300B5D566 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		0942F9301A8EC87400B5D566 /* SignupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,7 +137,6 @@
 				0942F8F41A8EA5A200B5D566 /* Images.xcassets */,
 				0942F8F61A8EA5A200B5D566 /* LaunchScreen.xib */,
 				0942F8EB1A8EA5A200B5D566 /* Supporting Files */,
-				0942F92B1A8EAA3A00B5D566 /* Perspective-Bridging-Header.h */,
 				0942F92E1A8EC74300B5D566 /* LoginVC.swift */,
 				0942F9301A8EC87400B5D566 /* SignupVC.swift */,
 				09360ADA1A8FD9E9005972F5 /* DashboardVC.swift */,
@@ -146,6 +145,7 @@
 				09360AE11A912B08005972F5 /* StoryfieldsVC.xib */,
 				09360AE41A91437B005972F5 /* RecordVC.swift */,
 				09360AE51A91437B005972F5 /* RecordVC.xib */,
+				09360B181A916BE6005972F5 /* Perspective-Bridging-Header.h */,
 			);
 			path = Perspective;
 			sourceTree = "<group>";
@@ -434,7 +434,7 @@
 				INFOPLIST_FILE = Perspective/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Perspective-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Perspective/Perspective-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -451,7 +451,7 @@
 				INFOPLIST_FILE = Perspective/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Perspective-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Perspective/Perspective-Bridging-Header.h";
 			};
 			name = Release;
 		};

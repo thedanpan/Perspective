@@ -22,28 +22,21 @@ class RecordVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     var currentUser = PFUser.currentUser()
 
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
 
-        captureSession.sessionPreset = AVCaptureSessionPreset640x480
+        captureSession.sessionPreset = AVCaptureSessionPreset1280x720
 
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
-
             println("captureVideoPressed and camera available.")
-
             var imagePicker = UIImagePickerController()
-
             imagePicker.delegate = self
-
             imagePicker.sourceType = .Camera;
-
             imagePicker.mediaTypes = [kUTTypeMovie!]
-
-            imagePicker.allowsEditing = false
-
+            imagePicker.allowsEditing = true
             imagePicker.showsCameraControls = true
-
             self.presentViewController(imagePicker, animated: true, completion: nil)
-
         }
         else {
             println("Camera not available.")
@@ -92,9 +85,10 @@ class RecordVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             }
             return nil
         }
-
-        self.dismissViewControllerAnimated(true, completion: {})
-        // UISaveVideoAtPathToSavedPhotosAlbum(pathString, self, nil, nil)
+            println("view stack= \(self.view)")
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("StoryfieldsVC") as StoryfieldsVC
+        self.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     func createVideoParseObj(key: String) {

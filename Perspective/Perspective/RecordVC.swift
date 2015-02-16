@@ -80,8 +80,10 @@ class RecordVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             }
             return nil
         }
-            println("view stack= \(self.view)")
+        println("view stack= \(self.view)")
+        
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("StoryfieldsVC") as StoryfieldsVC
+        vc.url = "https://s3.amazonaws.com/theperspectiveapp/\(uploadRequest.key)"
         self.dismissViewControllerAnimated(true, completion: nil)
         self.navigationController?.pushViewController(vc, animated: true)
     }

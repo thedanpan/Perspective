@@ -9,14 +9,11 @@
 import UIKit
 
 class LoginVC: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var txtIncompleteFieldsMessage: UILabel!
     
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
-    
-    @IBOutlet weak var displayUsername: UILabel!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +21,13 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         var currentUser = PFUser.currentUser()
         if currentUser != nil {
             // Do stuff with the user
-            self.displayUsername.text = currentUser.username
         } else {
             // Show the signup or login screen
         }
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

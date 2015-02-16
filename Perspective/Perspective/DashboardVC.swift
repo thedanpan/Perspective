@@ -9,54 +9,73 @@
 import UIKit
 
 class DashboardVC: UIViewController {
-
+    
     @IBOutlet weak var usernameText: UILabel!
     
+    @IBOutlet weak var logoutButton: UIButton!
     
-    @IBAction func displayUsername(){
-        
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    @IBOutlet weak var newPerspective: UIButton!
+    
+    @IBOutlet weak var loginButton: UIButton!
+    
+    func displayUsername(){
         var currentUser = PFUser.currentUser()
         if currentUser != nil {
             // Do stuff with the user
-            self.usernameText.text = currentUser.username
+            usernameText.text = "Welcome, " + currentUser.username
+            logoutButton.hidden = false
+            newPerspective.hidden = false
+            loginButton.hidden = true
         } else {
-            self.usernameText.text = "No current user!!"
+            usernameText.text = ""
+            logoutButton.hidden = true
+            loginButton.hidden = false
+            newPerspective.hidden = true
         }
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        displayUsername()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        var currentUser = PFUser.currentUser()
+        if currentUser != nil {
+            // Do stuff with the user
+        } else {
+            usernameText.text = ""
+        }
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     @IBAction func logout(sender: UIButton) {
         PFUser.logOut()
         var currentUser = PFUser.currentUser()
         if let navController = self.navigationController {
             navController.popViewControllerAnimated(true)
         }
+        displayUsername()
     }
-    
     
     @IBAction func unwindToDash(segue: UIStoryboardSegue) {
     }
-
-
+    
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

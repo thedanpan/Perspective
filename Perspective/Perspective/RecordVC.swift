@@ -34,7 +34,7 @@ class RecordVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             
             imagePicker.mediaTypes = [kUTTypeMovie!]
             
-            imagePicker.allowsEditing = false
+            imagePicker.allowsEditing = true
             
             imagePicker.showsCameraControls = true
             

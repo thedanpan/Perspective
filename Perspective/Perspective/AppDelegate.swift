@@ -17,7 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        Parse.setApplicationId("", clientKey: "")
+        Parse.setApplicationId("JQSo61J6lETTMcbiUMPjwlYJBn7I0JdHjatG4lD6", clientKey: "OaAXhHnBgMuVw0R2xMPzKGdNGZu7PJhwHjmLzUEh")
+        
+        let credentialsProvider = AWSCognitoCredentialsProvider.credentialsWithRegionType(
+            AWSRegionType.USEast1,
+            accountId: "",
+            identityPoolId: "",
+            unauthRoleArn: "",
+            authRoleArn: "")
+        let defaultServiceConfiguration = AWSServiceConfiguration(
+            region: AWSRegionType.USEast1,
+            credentialsProvider: credentialsProvider)
+        AWSServiceManager.defaultServiceManager().setDefaultServiceConfiguration(defaultServiceConfiguration)
         
         let dash = DashboardVC()
         let navController = UINavigationController(rootViewController: dash)

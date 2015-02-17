@@ -14,6 +14,7 @@ class StoryfieldsVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var clipDuration: UITextField!
     @IBOutlet weak var numOfClips: UITextField!
     @IBOutlet weak var searchFriends: UISearchBar!
+    var url: String!
 
     @IBOutlet weak var txtIncompleteFieldsMessage: UILabel!
     
@@ -33,29 +34,31 @@ class StoryfieldsVC: UIViewController, UITextFieldDelegate {
             story["owner"] = currentUser.username
             story["sender"] = currentUser.username
             story["receiver"] = ""
+            story.addUniqueObjectsFromArray([url], forKey:"videos")
             
             story.saveInBackgroundWithBlock {
                 (success: Bool, error: NSError!) -> Void in
                 if (success) {
-                    // The object has been saved.
+                    println("Sucessfully saved story")
                 } else {
-                    // There was a problem, check error.description
+                    println("Story did not save")
                 }
             }
         }
         
         if themeEntered != "" && clipDurationEntered != nil && numOfClipsEntered != nil {
             createStory()
+            self.navigationController?.popToRootViewControllerAnimated(true)
         } else {
             self.txtIncompleteFieldsMessage.text = "All Fields Required"
         }
-        
+     
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
+        println("the url is: \(self.url)")
     }
     
     override func didReceiveMemoryWarning() {

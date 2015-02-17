@@ -20,9 +20,7 @@ class PlaybackVC: UIViewController {
         var story = loadStoryVideos()
         let videosArray : AnyObject = story["videos"]
         var videoUrl = videosArray[0] as String
-        //var (localUrl, localPath) =
         getVideosFromS3(videoUrl)
-        // playVideo(localUrl, localPath: localPath)
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,25 +33,16 @@ class PlaybackVC: UIViewController {
         let downloadingFileURL = NSURL(fileURLWithPath: downloadingFilePath)
         let downloadRequest : AWSS3TransferManagerDownloadRequest = AWSS3TransferManagerDownloadRequest()
         downloadRequest.bucket = "theperspectiveapp"
-        downloadRequest.key =  "testfile2.mp4"
+        downloadRequest.key =  "1424126575.50152.mp4"
         downloadRequest.downloadingFileURL = downloadingFileURL
-        
-        //let readRequest1 : AWSS3TransferManagerDownloadRequest = AWSS3TransferManagerDownloadRequest()
         
         let transferManager = AWSS3TransferManager.defaultS3TransferManager()
         
         let task = transferManager.download(downloadRequest)
-        task.continueWithBlock { (task) -> AnyObject! in
-            println(task.error)
-            if task.error != nil {
-            } else {
-                println("Fetched video")
-                println(downloadingFileURL!)
-                var urlString = downloadingFileURL!.absoluteString
-                self.playVideo(downloadingFileURL!) // (downloadingFileURL!, localPath: downloadingFilePath)            }
-            }
+        task.continueWithExecutor(BFExecutor.mainThreadExecutor(), withBlock: { (task) -> AnyObject! in
+            self.playVideo(downloadingFileURL!)
             return nil
-        }
+        })
     }
     
     func loadStoryVideos() -> (PFObject) {
@@ -64,34 +53,13 @@ class PlaybackVC: UIViewController {
     
     func playVideo(video: NSURL) {
         var url:NSURL! = video   // NSURL(string: video)
-        
         moviePlayer = MPMoviePlayerController(contentURL: url)
-        
         moviePlayer.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
-        
         moviePlayer.view.sizeToFit()
-        
         self.view.addSubview(moviePlayer.view)
-        
         moviePlayer.fullscreen = true
-        
         moviePlayer.controlStyle = MPMovieControlStyle.Embedded
     }
-    
-//    func playVideo(localUrl: NSURL, localPath: String) {
-//        println("Got to playVideo function")
-////        let path =  NSBundle.mainBundle().pathForResource(localPath, ofType:"m4v")
-//        let url =  localUrl //NSURL.fileURLWithPath(localUrl)
-//        moviePlayer = MPMoviePlayerController(contentURL: url)
-//        if let player = moviePlayer {
-//            player.view.frame = self.view.bounds
-//            player.prepareToPlay()
-//            player.scalingMode = .AspectFill
-//            self.view.addSubview(player.view)
-//        }
-//    }
-    
-
     
     /*
     // MARK: - Navigation

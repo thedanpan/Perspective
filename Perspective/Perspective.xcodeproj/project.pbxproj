@@ -40,6 +40,8 @@
 		09BA74A51A92A9CF0023C476 /* TMCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BA749E1A92A9CF0023C476 /* TMCache.framework */; };
 		09BA74A61A92A9CF0023C476 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BA749F1A92A9CF0023C476 /* UICKeyChainStore.framework */; };
 		09BA74A71A92A9CF0023C476 /* XMLDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BA74A01A92A9CF0023C476 /* XMLDictionary.framework */; };
+		09BA74AA1A92C9F00023C476 /* PlaybackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA74A81A92C9F00023C476 /* PlaybackVC.swift */; };
+		09BA74AB1A92C9F00023C476 /* PlaybackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BA74A91A92C9F00023C476 /* PlaybackVC.xib */; };
 		09EF0D4D1A92A2CA00E385E9 /* AWSiOSSDKv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09EF0D4C1A92A2CA00E385E9 /* AWSiOSSDKv2.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +94,8 @@
 		09BA749E1A92A9CF0023C476 /* TMCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TMCache.framework; path = "../../../../../Downloads/aws-ios-sdk-2.0.16/third-party/TMCache.framework"; sourceTree = "<group>"; };
 		09BA749F1A92A9CF0023C476 /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = "../../../../../Downloads/aws-ios-sdk-2.0.16/third-party/UICKeyChainStore.framework"; sourceTree = "<group>"; };
 		09BA74A01A92A9CF0023C476 /* XMLDictionary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XMLDictionary.framework; path = "../../../../../Downloads/aws-ios-sdk-2.0.16/third-party/XMLDictionary.framework"; sourceTree = "<group>"; };
+		09BA74A81A92C9F00023C476 /* PlaybackVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackVC.swift; sourceTree = "<group>"; };
+		09BA74A91A92C9F00023C476 /* PlaybackVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaybackVC.xib; sourceTree = "<group>"; };
 		09EF0D4C1A92A2CA00E385E9 /* AWSiOSSDKv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSiOSSDKv2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +174,8 @@
 				09360AE11A912B08005972F5 /* StoryfieldsVC.xib */,
 				09360AE41A91437B005972F5 /* RecordVC.swift */,
 				09360AE51A91437B005972F5 /* RecordVC.xib */,
+				09BA74A81A92C9F00023C476 /* PlaybackVC.swift */,
+				09BA74A91A92C9F00023C476 /* PlaybackVC.xib */,
 			);
 			path = Perspective;
 			sourceTree = "<group>";
@@ -308,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0942F8F31A8EA5A200B5D566 /* Main.storyboard in Resources */,
+				09BA74AB1A92C9F00023C476 /* PlaybackVC.xib in Resources */,
 				09360AE71A91437B005972F5 /* RecordVC.xib in Resources */,
 				09360ADD1A8FD9E9005972F5 /* DashboardVC.xib in Resources */,
 				0942F8F81A8EA5A200B5D566 /* LaunchScreen.xib in Resources */,
@@ -331,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0942F9311A8EC87400B5D566 /* SignupVC.swift in Sources */,
+				09BA74AA1A92C9F00023C476 /* PlaybackVC.swift in Sources */,
 				09360AE21A912B08005972F5 /* StoryfieldsVC.swift in Sources */,
 				09360ADC1A8FD9E9005972F5 /* DashboardVC.swift in Sources */,
 				09360AE61A91437B005972F5 /* RecordVC.swift in Sources */,

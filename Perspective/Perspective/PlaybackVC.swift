@@ -6,21 +6,27 @@
 //  Copyright (c) 2015 Dev Bootcamp. All rights reserved.
 //
 
+import Foundation
+import AVFoundation
 import UIKit
+import AVKit
 import MediaPlayer
 
-class PlaybackVC: UIViewController {
+class PlaybackVC: AVPlayerViewController { // UIViewController
     
 //    var storyObjectId : String!    WILL TAKE IN STORY ID FROM DASHBOARD
     var storyObjectId = "2VxXrXOBn4"
-    var moviePlayer : MPMoviePlayerController!
+    var videoList : [AVPlayerItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         var story = loadStoryVideos()
-        let videosArray : AnyObject = story["videos"]
-        var videoUrl = videosArray[0] as String
-        getVideosFromS3(videoUrl)
+        var videosArray:NSArray = story["videos"] as NSArray
+        for item in videosArray{
+            var urlStr = NSURL(string: item as String)
+            self.videoList.append(AVPlayerItem(URL: urlStr))
+        }
+        playVideos()
     }
 
     override func didReceiveMemoryWarning() {

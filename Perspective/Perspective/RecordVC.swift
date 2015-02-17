@@ -26,7 +26,7 @@ class RecordVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        captureSession.sessionPreset = AVCaptureSessionPreset1280x720
+        captureSession.sessionPreset = AVCaptureSessionPreset640x480
 
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
             println("captureVideoPressed and camera available.")

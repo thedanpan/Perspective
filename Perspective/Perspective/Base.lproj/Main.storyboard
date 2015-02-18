@@ -81,11 +81,11 @@
         <!--RecordVC-->
         <scene sceneID="azX-7N-52v">
             <objects>
-                <viewController title="RecordVC" id="ymf-KA-qsi" customClass="RecordVC" customModule="Perspective" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecordVC" title="RecordVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ymf-KA-qsi" customClass="RecordVC" customModule="Perspective" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jew-I0-ytr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="n57-Sz-Veo"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -94,27 +94,14 @@
             </objects>
             <point key="canvasLocation" x="-324" y="1030"/>
         </scene>
-        <!--Storyfields-->
+        <!--PerspectiveFields-->
         <scene sceneID="Jil-dU-fdD">
             <objects>
-                <viewController storyboardIdentifier="StoryfieldsVC" title="Storyfields" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Rr-0M-2x3" customClass="StoryfieldsVC" customModule="Perspective" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PerspectiveFieldsVC" title="PerspectiveFields" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Rr-0M-2x3" customClass="PerspectiveFieldsVC" customModule="Perspective" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7X9-wO-hQa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="YDh-iy-9qg">
-                                <rect key="frame" x="43" y="241" width="234" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="clip duration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R3h-6z-an4">
-                                <rect key="frame" x="81" y="213" width="159" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="B5o-ZL-12u">
                                 <rect key="frame" x="43" y="164" width="234" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -129,46 +116,46 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="OI5-n4-MIt">
-                                <rect key="frame" x="43" y="320" width="234" height="30"/>
+                                <rect key="frame" x="43" y="242" width="234" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total # of clips" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AGQ-eL-brn">
-                                <rect key="frame" x="81" y="294" width="159" height="29"/>
+                                <rect key="frame" x="81" y="216" width="159" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <searchBar contentMode="redraw" id="7EX-PY-DnN">
-                                <rect key="frame" x="43" y="399" width="234" height="44"/>
+                                <rect key="frame" x="43" y="321" width="234" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="who's next?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oOw-EQ-Smq">
-                                <rect key="frame" x="73" y="371" width="175" height="29"/>
+                                <rect key="frame" x="73" y="293" width="175" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AGj-Xs-Rm3">
-                                <rect key="frame" x="43" y="458" width="234" height="39"/>
+                                <rect key="frame" x="43" y="380" width="234" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TS0-q3-rUQ">
-                                <rect key="frame" x="94" y="493" width="134" height="41"/>
+                                <rect key="frame" x="94" y="415" width="134" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <state key="normal" title="submit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="submitStoryfields:" destination="9Rr-0M-2x3" eventType="touchUpInside" id="ubV-hl-LCd"/>
+                                    <action selector="submitPerspectiveFields:" destination="9Rr-0M-2x3" eventType="touchUpInside" id="etZ-Be-AdN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="n e w   p e r s p e c t i v e" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G3P-KZ-vV2">
@@ -184,7 +171,6 @@
                     <navigationItem key="navigationItem" id="XRP-YC-xnJ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="clipDuration" destination="YDh-iy-9qg" id="Arj-u3-1FJ"/>
                         <outlet property="numOfClips" destination="OI5-n4-MIt" id="GKg-jS-wYc"/>
                         <outlet property="searchFriends" destination="7EX-PY-DnN" id="U3f-rh-fTV"/>
                         <outlet property="theme" destination="B5o-ZL-12u" id="aZg-pE-6Ea"/>
@@ -202,13 +188,81 @@
                     <view key="view" contentMode="scaleToFill" id="tx8-Qf-Xb5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GE1-bR-nv1">
+                                <rect key="frame" x="136" y="126" width="48" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FkB-cD-JP9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="523" y="1030"/>
+            <point key="canvasLocation" x="456" y="1030"/>
+        </scene>
+        <!--WhosNextVC-->
+        <scene sceneID="5YX-yH-vvs">
+            <objects>
+                <viewController storyboardIdentifier="WhosNextVC" title="WhosNextVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1tC-xU-m9S" customClass="WhosNextVC" customModule="Perspective" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pcZ-og-Isk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder text for instructions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VNW-V2-u9z">
+                                <rect key="frame" x="39" y="89" width="244" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qqJ-zV-tY5">
+                                <rect key="frame" x="51" y="168" width="219" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Pick a friend">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="gotoPickCollaborator:" destination="1tC-xU-m9S" eventType="touchUpInside" id="w4p-oQ-Skg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yR8-WG-c4k">
+                                <rect key="frame" x="51" y="388" width="219" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="queryPerspective:" destination="1tC-xU-m9S" eventType="touchUpInside" id="T5w-f6-6uV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lmM-ut-pTj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="815" y="1030"/>
+        </scene>
+        <!--PickCollaboratorVC-->
+        <scene sceneID="ENf-9h-57E">
+            <objects>
+                <viewController storyboardIdentifier="PickCollaboratorVC" title="PickCollaboratorVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qoX-BN-QLm" customClass="PickCollaboratorVC" customModule="Perspective" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uI4-IO-wMs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4mf-tF-RoK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1182" y="1030"/>
         </scene>
         <!--DashboardVC.swift-->
         <scene sceneID="bYs-kI-CLg">
@@ -247,7 +301,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ymf-KA-qsi" kind="push" id="9dz-oc-wnl"/>
+                                    <action selector="gotoRecord:" destination="w4y-Gc-AxM" eventType="touchUpInside" id="CHj-cW-UmA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PCH-4O-tYW">

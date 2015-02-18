@@ -1,5 +1,5 @@
 //
-//  StoryfieldsVC.swift
+//  PerspectiveFieldsVC.swift
 //  Perspective
 //
 //  Created by Apprentice on 2/15/15.
@@ -8,10 +8,9 @@
 
 import UIKit
 
-class StoryfieldsVC: UIViewController, UITextFieldDelegate {
+class PerspectiveFieldsVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var theme: UITextField!
-    @IBOutlet weak var clipDuration: UITextField!
     @IBOutlet weak var numOfClips: UITextField!
     @IBOutlet weak var searchFriends: UISearchBar!
     var url: String!
@@ -19,35 +18,32 @@ class StoryfieldsVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtIncompleteFieldsMessage: UILabel!
     
     
-    @IBAction func submitStoryfields(sender: AnyObject) {
+    @IBAction func submitPerspectiveFields(sender: AnyObject) {
         var themeEntered = theme.text
-        var clipDurationEntered = clipDuration.text.toInt()
         var numOfClipsEntered = numOfClips.text.toInt()
         
-        func createStory(){
+        func createPerspective(){
             var currentUser = PFUser.currentUser()
             
-            var story = PFObject(className: "Story")
-            story["theme"] = themeEntered
-            story["clipDuration"] = clipDurationEntered
-            story["numOfClips"] = numOfClipsEntered
-            story["owner"] = currentUser.username
-            story["sender"] = currentUser.username
-            story["receiver"] = ""
-            story.addUniqueObjectsFromArray([url], forKey:"videos")
+            var perspective = PFObject(className: "Perspective")
+            perspective["theme"] = themeEntered
+            perspective["numOfClips"] = numOfClipsEntered
+            perspective["collaborators"] = [PFUser.currentUser().username]
+            perspective["videos"] = [url]
+//            perspective.addUniqueObjectsFromArray([url], forKey:"videos")
             
-            story.saveInBackgroundWithBlock {
+            perspective.saveInBackgroundWithBlock {
                 (success: Bool, error: NSError!) -> Void in
                 if (success) {
-                    println("Sucessfully saved story")
+                    println("Sucessfully saved Perspective")
                 } else {
-                    println("Story did not save")
+                    println("Perspective did not save")
                 }
             }
         }
         
-        if themeEntered != "" && clipDurationEntered != nil && numOfClipsEntered != nil {
-            createStory()
+        if themeEntered != "" && numOfClipsEntered != nil {
+            createPerspective()
             self.navigationController?.popToRootViewControllerAnimated(true)
         } else {
             self.txtIncompleteFieldsMessage.text = "All Fields Required"
@@ -73,7 +69,6 @@ class StoryfieldsVC: UIViewController, UITextFieldDelegate {
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         theme.endEditing(true)
-        clipDuration.endEditing(true)
         numOfClips.endEditing(true)
     }
 

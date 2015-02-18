@@ -17,7 +17,10 @@ class DashboardVC: UIViewController {
     @IBOutlet weak var newPerspective: UIButton!
     
     @IBOutlet weak var loginButton: UIButton!
-//    @IBOutlet weak var playback: UIButton!
+    
+    @IBOutlet weak var signupButton: UIButton!
+    
+    @IBOutlet weak var playbackButton: UIButton!
     
     func displayUsername(){
         var currentUser = PFUser.currentUser()
@@ -27,11 +30,13 @@ class DashboardVC: UIViewController {
             logoutButton.hidden = false
             newPerspective.hidden = false
             loginButton.hidden = true
+            signupButton.hidden = true
         } else {
             usernameText.text = ""
             logoutButton.hidden = true
             loginButton.hidden = false
             newPerspective.hidden = true
+            signupButton.hidden = false
         }
     }
     
@@ -47,7 +52,10 @@ class DashboardVC: UIViewController {
         } else {
             usernameText.text = ""
         }
-        // Do any additional setup after loading the view.
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "signupReload:", name:"signedUp", object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loginReload:", name:"loggedIn", object: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,6 +63,15 @@ class DashboardVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func signupReload(notification: NSNotification){
+        //load data here
+        self.reloadInputViews()
+    }
+    
+    func loginReload(notification: NSNotification){
+        //load data here
+        self.reloadInputViews()
+    }
     
     @IBAction func logout(sender: UIButton) {
         PFUser.logOut()
@@ -65,12 +82,19 @@ class DashboardVC: UIViewController {
         displayUsername()
     }
     
-    @IBAction func unwindToDash(segue: UIStoryboardSegue) {
+    @IBAction func gotoLogin(sender: UIButton) {
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("LoginVC") as LoginVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func signupTapped(sender: UIButton) {
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("SignupVC") as SignupVC
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func gotoPlayback(sender: UIButton) {
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("PlaybackVC") as PlaybackVC
-        vc.perspectiveId = "ZKwLngk71j"
+        vc.perspectiveId = "CIXuizXrzZ"
         vc.playingCompletedPerspective = true
         self.navigationController?.pushViewController(vc, animated: true)
         println("Leaving DashboardVC, pushing PlaybackVC.")
@@ -82,15 +106,4 @@ class DashboardVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
         println("Leaving DashboardVC, pushing RecordVC.")
     }
-
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
-    
 }

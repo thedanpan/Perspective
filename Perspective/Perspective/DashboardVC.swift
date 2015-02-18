@@ -73,7 +73,12 @@ class DashboardVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    
+    @IBAction func gotoRecord(sender: UIButton) {
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("RecordVC") as RecordVC
+        vc.newPerspective = true
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
     /*
     // MARK: - Navigation
     

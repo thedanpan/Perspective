@@ -9,6 +9,8 @@
 import UIKit
 
 class WhosNextVC: UIViewController {
+    
+    var url: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()

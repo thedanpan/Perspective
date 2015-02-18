@@ -13,6 +13,7 @@ class PerspectiveFieldsVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var theme: UITextField!
     @IBOutlet weak var numOfClips: UITextField!
     @IBOutlet weak var searchFriends: UISearchBar!
+    @IBOutlet weak var submit: UIButton!
     var url: String!
 
     @IBOutlet weak var txtIncompleteFieldsMessage: UILabel!

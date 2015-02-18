@@ -7,7 +7,7 @@
         <!--LoginVC-->
         <scene sceneID="BW7-uX-jdM">
             <objects>
-                <viewController id="kLc-jW-T1q" customClass="LoginVC" customModule="Perspective" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" title="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kLc-jW-T1q" customClass="LoginVC" customModule="Perspective" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cBK-1w-LfR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,7 +42,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="DYg-Yb-tCx" kind="modal" identifier="" id="IpR-CN-d4w"/>
+                                    <action selector="signupTapped:" destination="kLc-jW-T1q" eventType="touchUpInside" id="3Aw-d6-hj1"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="l o g    i n" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4wS-XF-Ztp">
@@ -173,6 +173,7 @@
                     <connections>
                         <outlet property="numOfClips" destination="OI5-n4-MIt" id="GKg-jS-wYc"/>
                         <outlet property="searchFriends" destination="7EX-PY-DnN" id="U3f-rh-fTV"/>
+                        <outlet property="submit" destination="TS0-q3-rUQ" id="TGv-Be-erC"/>
                         <outlet property="theme" destination="B5o-ZL-12u" id="aZg-pE-6Ea"/>
                         <outlet property="txtIncompleteFieldsMessage" destination="AGj-Xs-Rm3" id="NZe-ZK-DQv"/>
                     </connections>
@@ -244,6 +245,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="submitButton" destination="yR8-WG-c4k" id="owQ-XG-tBh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lmM-ut-pTj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -267,7 +271,7 @@
         <!--DashboardVC.swift-->
         <scene sceneID="bYs-kI-CLg">
             <objects>
-                <viewController title="DashboardVC.swift" id="w4y-Gc-AxM" customClass="DashboardVC" customModule="Perspective" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashboardVC" title="DashboardVC.swift" useStoryboardIdentifierAsRestorationIdentifier="YES" id="w4y-Gc-AxM" customClass="DashboardVC" customModule="Perspective" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uNf-IG-Gsu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -281,7 +285,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="22o-LY-ZkH">
-                                <rect key="frame" x="98" y="382" width="124" height="41"/>
+                                <rect key="frame" x="96" y="420" width="124" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <state key="normal" title="log out">
@@ -313,7 +317,7 @@
                                     <color key="titleShadowColor" red="0.93250868060000003" green="0.93250868060000003" blue="0.93250868060000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="kLc-jW-T1q" kind="push" id="yaO-QT-c1x"/>
+                                    <action selector="gotoLogin:" destination="w4y-Gc-AxM" eventType="touchUpInside" id="sL3-Jg-AjH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="d a s h b o a r d" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ri5-oU-Ngq">
@@ -335,6 +339,18 @@
                                     <action selector="gotoPlayback:" destination="w4y-Gc-AxM" eventType="touchUpInside" id="NbT-dr-1kJ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Wwq-x4-w0E">
+                                <rect key="frame" x="96" y="378" width="124" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal" title="sign up">
+                                    <color key="titleColor" red="0.96127288509999997" green="0.96127288509999997" blue="0.96127288509999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signupTapped:" destination="w4y-Gc-AxM" eventType="touchUpInside" id="m1d-lM-3Nj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -344,6 +360,8 @@
                         <outlet property="loginButton" destination="PCH-4O-tYW" id="szK-ih-Vuf"/>
                         <outlet property="logoutButton" destination="22o-LY-ZkH" id="xJY-Qz-VNY"/>
                         <outlet property="newPerspective" destination="zeG-ck-8kO" id="NvQ-dd-fUf"/>
+                        <outlet property="playbackButton" destination="lY3-hs-Ql5" id="Mdy-tj-hhT"/>
+                        <outlet property="signupButton" destination="Wwq-x4-w0E" id="Agy-cd-SPI"/>
                         <outlet property="usernameText" destination="VF5-nN-Fp0" id="jty-7y-YVD"/>
                     </connections>
                 </viewController>
@@ -354,7 +372,7 @@
         <!--SignupVC-->
         <scene sceneID="Lt2-KO-hGj">
             <objects>
-                <viewController id="DYg-Yb-tCx" customClass="SignupVC" customModule="Perspective" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DYg-Yb-tCx" customClass="SignupVC" customModule="Perspective" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1ig-Rv-KXd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -414,7 +432,6 @@
                                 </state>
                                 <connections>
                                     <action selector="loginVerifyButton:" destination="DYg-Yb-tCx" eventType="touchUpInside" id="e7Z-3c-DFn"/>
-                                    <segue destination="WUu-UR-E5d" kind="unwind" unwindAction="unwindToDash:" id="6zb-hw-cfC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -423,6 +440,8 @@
                     <navigationItem key="navigationItem" id="cbn-hW-DSW"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="returnToLogin" destination="STL-LJ-jmW" id="bvX-xv-lVr"/>
+                        <outlet property="signupButton" destination="IIt-Yf-HuR" id="Lu2-8U-lpM"/>
                         <outlet property="txtEmail" destination="sbn-en-VDj" id="vFv-r5-tI7"/>
                         <outlet property="txtIncompleteFieldsMessage" destination="1sl-WP-PwC" id="yE9-4e-Igg"/>
                         <outlet property="txtPassword" destination="r63-0G-vlO" id="6ag-Dg-lig"/>
@@ -430,7 +449,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mUv-FV-Bl4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="WUu-UR-E5d" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1042" y="352"/>
         </scene>

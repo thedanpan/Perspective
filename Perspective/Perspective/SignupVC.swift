@@ -14,43 +14,13 @@ class SignupVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var returnToLogin: UIButton!
     
-    @IBAction func loginVerifyButton(sender: AnyObject){
-
-        var usrEntered = txtUsername.text
-        var pwdEntered = txtPassword.text
-        var emlEntered = txtEmail.text
-        
-        func userSignUp(){
-            
-            var user = PFUser()
-            user.username = usrEntered
-            user.password = pwdEntered
-            user.email = emlEntered
-            
-            user.signUpInBackgroundWithBlock {
-                (succeded: Bool!, error: NSError!) -> Void in
-                if error == nil {
-                    //Hooray!
-                    self.txtIncompleteFieldsMessage.text = "User Signed Up";
-                } else {
-                    //Show the errorString
-                }
-            }
-        }
-        
-        if usrEntered != "" && pwdEntered != "" && emlEntered != "" {
-            userSignUp()
-        } else {
-            self.txtIncompleteFieldsMessage.text = "All Fields Required"
-        }
-        
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        NSNotificationCenter.defaultCenter().postNotificationName("signedUp", object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,19 +39,39 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         txtPassword.endEditing(true)
     }
     
+    @IBAction func loginVerifyButton(sender: AnyObject){
+        
+        var usrEntered = txtUsername.text
+        var pwdEntered = txtPassword.text
+        var emlEntered = txtEmail.text
+        
+        func userSignUp(){
+            var user = PFUser()
+            user.username = usrEntered
+            user.password = pwdEntered
+            user.email = emlEntered
+            
+            user.signUpInBackgroundWithBlock {
+                (succeded: Bool!, error: NSError!) -> Void in
+                if error == nil {
+                    //Hooray!
+                    self.txtIncompleteFieldsMessage.text = "User Signed Up"
+                    self.navigationController!.popToRootViewControllerAnimated(true)
+                } else {
+                    //Show the errorString
+                }
+            }
+        }
+        
+        if usrEntered != "" && pwdEntered != "" && emlEntered != "" {
+            userSignUp()
+        } else {
+            self.txtIncompleteFieldsMessage.text = "All Fields Required"
+        }
+    }
 
     @IBAction func gotoLogin(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        self.navigationController?.popToViewController(viewControllers[viewControllers.count - 2], animated: true)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

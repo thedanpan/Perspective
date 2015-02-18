@@ -20,13 +20,14 @@ class RecordVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     var previewLayer : AVCaptureVideoPreviewLayer?
     var captureDevice : AVCaptureDevice?
     var currentUser = PFUser.currentUser()
+    var newPerspective : Bool!
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        captureSession.sessionPreset = AVCaptureSessionPreset640x480
+        captureSession.sessionPreset = AVCaptureSessionPreset1280x720
 
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
             println("captureVideoPressed and camera available.")
@@ -36,7 +37,7 @@ class RecordVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             imagePicker.mediaTypes = [kUTTypeMovie!]
             imagePicker.allowsEditing = true
             imagePicker.showsCameraControls = true
-            self.presentViewController(imagePicker, animated: true, completion: nil)
+            self.presentViewController(imagePicker, animated: false, completion: nil)
         }
         else {
             println("Camera not available.")
@@ -48,7 +49,11 @@ class RecordVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
 
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info:NSDictionary!) {
 
@@ -82,12 +87,21 @@ class RecordVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         }
         println("view stack= \(self.view)")
         
-        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("StoryfieldsVC") as StoryfieldsVC
-        vc.url = "https://s3.amazonaws.com/theperspectiveapp/\(uploadRequest.key)"
-        self.dismissViewControllerAnimated(true, completion: nil)
-        self.navigationController?.pushViewController(vc, animated: true)
+        if newPerspective == true {
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("StoryfieldsVC") as StoryfieldsVC
+            vc.url = "https://s3.amazonaws.com/theperspectiveapp/\(uploadRequest.key)"
+            self.dismissViewControllerAnimated(true, completion: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("WhosNextVC") as WhosNextVC
+            vc.url = "https://s3.amazonaws.com/theperspectiveapp/\(uploadRequest.key)"
+            self.dismissViewControllerAnimated(true, completion: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 
+//  DELETE VIDEO TABLE(?)
+    
     func createVideoParseObj(key: String) {
         var video = PFObject(className:"Video")
         video["url"] = "https://s3.amazonaws.com/theperspectiveapp/\(key)"

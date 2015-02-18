@@ -17,7 +17,7 @@ class DashboardVC: UIViewController {
     @IBOutlet weak var newPerspective: UIButton!
     
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var playback: UIButton!
+//    @IBOutlet weak var playback: UIButton!
     
     func displayUsername(){
         var currentUser = PFUser.currentUser()
@@ -70,13 +70,17 @@ class DashboardVC: UIViewController {
     
     @IBAction func gotoPlayback(sender: UIButton) {
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("PlaybackVC") as PlaybackVC
+        vc.perspectiveId = "ZKwLngk71j"
+        vc.playingCompletedPerspective = true
         self.navigationController?.pushViewController(vc, animated: true)
+        println("Leaving DashboardVC, pushing PlaybackVC.")
     }
     
     @IBAction func gotoRecord(sender: UIButton) {
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("RecordVC") as RecordVC
         vc.newPerspective = true
         self.navigationController?.pushViewController(vc, animated: true)
+        println("Leaving DashboardVC, pushing RecordVC.")
     }
 
     /*

@@ -34,39 +34,27 @@ class PlaybackVC: AVPlayerViewController { // UIViewController
         // Dispose of any resources that can be recreated.
     }
     
-    func getVideosFromS3(video: String) { //-> (NSURL, NSString) {
-        let downloadingFilePath = NSTemporaryDirectory().stringByAppendingPathComponent("movie.m4v")
-        let downloadingFileURL = NSURL(fileURLWithPath: downloadingFilePath)
-        let downloadRequest : AWSS3TransferManagerDownloadRequest = AWSS3TransferManagerDownloadRequest()
-        downloadRequest.bucket = "theperspectiveapp"
-        downloadRequest.key =  "1424126575.50152.mp4"
-        downloadRequest.downloadingFileURL = downloadingFileURL
-        
-        let transferManager = AWSS3TransferManager.defaultS3TransferManager()
-        
-        let task = transferManager.download(downloadRequest)
-        task.continueWithExecutor(BFExecutor.mainThreadExecutor(), withBlock: { (task) -> AnyObject! in
-            self.playVideo(downloadingFileURL!)
-            return nil
-        })
-    }
-    
     func loadStoryVideos() -> (PFObject) {
         var query = PFQuery(className:"Story")
         var storyObject = query.getObjectWithId(storyObjectId)
         return storyObject
     }
     
-    func playVideo(video: NSURL) {
-        var url:NSURL! = video   // NSURL(string: video)
-        moviePlayer = MPMoviePlayerController(contentURL: url)
-        moviePlayer.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
-        moviePlayer.view.sizeToFit()
-        self.view.addSubview(moviePlayer.view)
-        moviePlayer.fullscreen = true
-        moviePlayer.controlStyle = MPMovieControlStyle.Embedded
+    func playVideos() {
+        println("Inside playVideos \(videoList)")
+        
+        let player = AVQueuePlayer(items: videoList)
+        let playerController = AVPlayerViewController()
+        
+        playerController.player = player
+        self.addChildViewController(playerController)
+        self.view.addSubview(playerController.view)
+        playerController.view.frame = self.view.frame
+
+        player.play()
     }
     
+
     /*
     // MARK: - Navigation
 

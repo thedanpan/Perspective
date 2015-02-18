@@ -42,6 +42,8 @@
 		09BA74A71A92A9CF0023C476 /* XMLDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BA74A01A92A9CF0023C476 /* XMLDictionary.framework */; };
 		09BA74AA1A92C9F00023C476 /* PlaybackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA74A81A92C9F00023C476 /* PlaybackVC.swift */; };
 		09BA74AB1A92C9F00023C476 /* PlaybackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BA74A91A92C9F00023C476 /* PlaybackVC.xib */; };
+		09BA74B21A9435870023C476 /* WhosNextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA74B01A9435870023C476 /* WhosNextVC.swift */; };
+		09BA74B31A9435870023C476 /* WhosNextVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BA74B11A9435870023C476 /* WhosNextVC.xib */; };
 		09EF0D4D1A92A2CA00E385E9 /* AWSiOSSDKv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09EF0D4C1A92A2CA00E385E9 /* AWSiOSSDKv2.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +98,8 @@
 		09BA74A01A92A9CF0023C476 /* XMLDictionary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XMLDictionary.framework; path = "../../../../../Downloads/aws-ios-sdk-2.0.16/third-party/XMLDictionary.framework"; sourceTree = "<group>"; };
 		09BA74A81A92C9F00023C476 /* PlaybackVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackVC.swift; sourceTree = "<group>"; };
 		09BA74A91A92C9F00023C476 /* PlaybackVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaybackVC.xib; sourceTree = "<group>"; };
+		09BA74B01A9435870023C476 /* WhosNextVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhosNextVC.swift; sourceTree = "<group>"; };
+		09BA74B11A9435870023C476 /* WhosNextVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WhosNextVC.xib; sourceTree = "<group>"; };
 		09EF0D4C1A92A2CA00E385E9 /* AWSiOSSDKv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSiOSSDKv2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,6 +180,8 @@
 				09360AE51A91437B005972F5 /* RecordVC.xib */,
 				09BA74A81A92C9F00023C476 /* PlaybackVC.swift */,
 				09BA74A91A92C9F00023C476 /* PlaybackVC.xib */,
+				09BA74B01A9435870023C476 /* WhosNextVC.swift */,
+				09BA74B11A9435870023C476 /* WhosNextVC.xib */,
 			);
 			path = Perspective;
 			sourceTree = "<group>";
@@ -313,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09BA74B31A9435870023C476 /* WhosNextVC.xib in Resources */,
 				0942F8F31A8EA5A200B5D566 /* Main.storyboard in Resources */,
 				09BA74AB1A92C9F00023C476 /* PlaybackVC.xib in Resources */,
 				09360AE71A91437B005972F5 /* RecordVC.xib in Resources */,
@@ -341,6 +348,7 @@
 				09BA74AA1A92C9F00023C476 /* PlaybackVC.swift in Sources */,
 				09360AE21A912B08005972F5 /* StoryfieldsVC.swift in Sources */,
 				09360ADC1A8FD9E9005972F5 /* DashboardVC.swift in Sources */,
+				09BA74B21A9435870023C476 /* WhosNextVC.swift in Sources */,
 				09360AE61A91437B005972F5 /* RecordVC.swift in Sources */,
 				0942F8EE1A8EA5A200B5D566 /* AppDelegate.swift in Sources */,
 				0942F92F1A8EC74300B5D566 /* LoginVC.swift in Sources */,

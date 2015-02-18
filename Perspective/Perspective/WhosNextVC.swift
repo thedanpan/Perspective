@@ -10,7 +10,7 @@ import UIKit
 
 class WhosNextVC: UIViewController {
     
-//    @IBOutlet weak var instructionsText: UILabel!
+    @IBOutlet weak var submitButton: UIButton!
     
     var url: String!
     var perspectiveId: String!

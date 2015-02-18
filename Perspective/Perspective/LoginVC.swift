@@ -18,6 +18,8 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().postNotificationName("loggedIn", object: nil)
+        
         var currentUser = PFUser.currentUser()
         if currentUser != nil {
             // Do stuff with the user
@@ -49,12 +51,12 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         var usrEntered = txtUsername.text
         var pwdEntered = txtPassword.text
         
-        func userLogIn(){
+        func userLogIn() {
             PFUser.logInWithUsernameInBackground(usrEntered, password:pwdEntered) {
                 (user: PFUser!, error: NSError!) -> Void in
                 if user != nil {
                     self.txtIncompleteFieldsMessage.text = "Log in successful."
-                    self.dismissViewControllerAnimated(true, completion: nil)
+                    self.navigationController?.popToRootViewControllerAnimated(true)
                 } else {
                     self.txtIncompleteFieldsMessage.text = "Log in failed. Please try again."
                 }
@@ -69,6 +71,10 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
     }
     
+    @IBAction func signupTapped(sender: UIButton) {
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("SignupVC") as SignupVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 

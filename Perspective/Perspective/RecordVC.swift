@@ -21,6 +21,7 @@ class RecordVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     var captureDevice : AVCaptureDevice?
     var currentUser = PFUser.currentUser()
     var newPerspective : Bool!
+    var perspectiveId : String!
 
 
     override func viewDidLoad() {
@@ -53,6 +54,7 @@ class RecordVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         self.dismissViewControllerAnimated(true, completion: nil)
         self.navigationController?.popToRootViewControllerAnimated(true)
+        println("Video cancel button tapped, pop to root VC.")
     }
 
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info:NSDictionary!) {
@@ -81,41 +83,43 @@ class RecordVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             } else {
                 //completed
                 println("completed")
-                self.createVideoParseObj(uploadRequest.key)
+//                self.createVideoParseObj(uploadRequest.key)
             }
             return nil
         }
-        println("view stack= \(self.view)")
+//        println("view stack= \(self.view)")
         
         if newPerspective == true {
-            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("StoryfieldsVC") as StoryfieldsVC
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("PerspectiveFieldsVC") as PerspectiveFieldsVC
             vc.url = "https://s3.amazonaws.com/theperspectiveapp/\(uploadRequest.key)"
             self.dismissViewControllerAnimated(true, completion: nil)
             self.navigationController?.pushViewController(vc, animated: true)
+            println("Leaving RecordVC, pushing PerspectiveFieldsVC")
         } else {
             let vc = self.storyboard?.instantiateViewControllerWithIdentifier("WhosNextVC") as WhosNextVC
             vc.url = "https://s3.amazonaws.com/theperspectiveapp/\(uploadRequest.key)"
+            vc.perspectiveId = perspectiveId
             self.dismissViewControllerAnimated(true, completion: nil)
             self.navigationController?.pushViewController(vc, animated: true)
+            println("Leaving RecordVC, pushing WhosNextVC")
         }
     }
 
-//  DELETE VIDEO TABLE(?)
     
-    func createVideoParseObj(key: String) {
-        var video = PFObject(className:"Video")
-        video["url"] = "https://s3.amazonaws.com/theperspectiveapp/\(key)"
-        video["user"] = "\(currentUser.username)"
-        video.saveInBackgroundWithBlock {
-            (success: Bool, error: NSError!) -> Void in
-            if (success) {
-                // The object has been saved.
-                println("saved to Parse")
-            } else {
-                // There was a problem, check error.description
-
-            }
-        }
-    }
+//    func createVideoParseObj(key: String) {
+//        var video = PFObject(className:"Video")
+//        video["url"] = "https://s3.amazonaws.com/theperspectiveapp/\(key)"
+//        video["user"] = "\(currentUser.username)"
+//        video.saveInBackgroundWithBlock {
+//            (success: Bool, error: NSError!) -> Void in
+//            if (success) {
+//                // The object has been saved.
+//                println("saved to Parse")
+//            } else {
+//                // There was a problem, check error.description
+//
+//            }
+//        }
+//    }
 
 }

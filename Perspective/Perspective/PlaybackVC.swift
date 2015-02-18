@@ -50,8 +50,18 @@ class PlaybackVC: AVPlayerViewController { // UIViewController
         self.addChildViewController(playerController)
         self.view.addSubview(playerController.view)
         playerController.view.frame = self.view.frame
-
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "stop", name: "AVPlayerItemDidPlayToEndTimeNotification", object: videoList.last)
         player.play()
+    }
+    
+    func stop(){
+        self.player = nil;
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "AVPlayerItemDidPlayToEndTimeNotification", object: nil)
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("RecordVC") as RecordVC
+        vc.newPerspective = false
+        self.dismissViewControllerAnimated(false, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 

@@ -25,7 +25,6 @@ class PerspectiveFieldsVC: UIViewController, UITextFieldDelegate , UIPickerViewD
     
     
     override func viewWillAppear(animated: Bool) {
-    
     }
     
     func queryFriends() {
@@ -50,15 +49,10 @@ class PerspectiveFieldsVC: UIViewController, UITextFieldDelegate , UIPickerViewD
         queryFriends()
         contactList.delegate = self
         contactList.dataSource = self
-//        pickerView.dataSource = self
-//        pickerView.delegate = self
-//        pickerView.reloadAllComponents
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {

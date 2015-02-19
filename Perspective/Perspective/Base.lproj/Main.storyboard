@@ -220,16 +220,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qqJ-zV-tY5">
-                                <rect key="frame" x="51" y="168" width="219" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Pick a friend">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="gotoPickCollaborator:" destination="1tC-xU-m9S" eventType="touchUpInside" id="w4p-oQ-Skg"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yR8-WG-c4k">
                                 <rect key="frame" x="51" y="388" width="219" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -240,11 +230,16 @@
                                     <action selector="queryPerspective:" destination="1tC-xU-m9S" eventType="touchUpInside" id="T5w-f6-6uV"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" id="RAN-Rm-pYD">
+                                <rect key="frame" x="54" y="141" width="212" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="contactList" destination="RAN-Rm-pYD" id="qHf-Hy-7XC"/>
                         <outlet property="submitButton" destination="yR8-WG-c4k" id="owQ-XG-tBh"/>
                     </connections>
                 </viewController>
@@ -316,18 +311,6 @@
                                     <action selector="signupTapped:" destination="w4y-Gc-AxM" eventType="touchUpInside" id="m1d-lM-3Nj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lY3-hs-Ql5">
-                                <rect key="frame" x="28" y="66" width="261" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
-                                <state key="normal" title="playback">
-                                    <color key="titleColor" red="0.96127288509999997" green="0.96127288509999997" blue="0.96127288509999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="gotoPlayback:" destination="w4y-Gc-AxM" eventType="touchUpInside" id="NbT-dr-1kJ"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="OPy-i1-ZMo">
                                 <rect key="frame" x="35" y="147" width="112" height="284"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -357,7 +340,6 @@
                         <outlet property="logoutButton" destination="22o-LY-ZkH" id="xJY-Qz-VNY"/>
                         <outlet property="newPerspective" destination="zeG-ck-8kO" id="NvQ-dd-fUf"/>
                         <outlet property="noteStream" destination="DMn-wx-LmB" id="sfj-59-61Q"/>
-                        <outlet property="playbackButton" destination="lY3-hs-Ql5" id="Mdy-tj-hhT"/>
                         <outlet property="signupButton" destination="Wwq-x4-w0E" id="Agy-cd-SPI"/>
                         <outlet property="timeStream" destination="OPy-i1-ZMo" id="dGe-0E-A5Z"/>
                         <outlet property="usernameText" destination="VF5-nN-Fp0" id="jty-7y-YVD"/>

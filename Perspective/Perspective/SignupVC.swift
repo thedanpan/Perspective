@@ -50,6 +50,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
             user.username = usrEntered
             user.password = pwdEntered
             user.email = emlEntered
+            user["friendList"] = ["dan"]
             
             user.signUpInBackgroundWithBlock {
                 (succeded: Bool!, error: NSError!) -> Void in

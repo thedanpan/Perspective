@@ -10,7 +10,6 @@ import UIKit
 
 class DashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-
     var tableData : [String] = ["Darrin", "Dionne", "Scott", "Dani"]
     @IBOutlet weak var usernameText: UILabel!
 
@@ -26,8 +25,11 @@ class DashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
     @IBOutlet var noteStream: UITableView!
 
+    @IBOutlet var timeStream: UITableView!
+    
     var notificationQuery : [Note] = []
 
+    var timelineQuery : [Timeline] = []
 
     func displayUsername(){
         var currentUser = PFUser.currentUser()
@@ -40,19 +42,16 @@ class DashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             signupButton.hidden = true
             noteStream.hidden = false
             var nib = UINib(nibName: "NoteCellNib", bundle: nil)
-            noteStream.registerNib(nib, forCellReuseIdentifier: "cell")
+            noteStream.registerNib(nib, forCellReuseIdentifier: "nCell")
+            
+            var notificationQuery = PFQuery(className: "Notification")
+            notificationQuery.whereKey("toUser", equalTo: currentUser.username)
 
-            var query = PFQuery(className: "Notification")
-            query.whereKey("toUser", equalTo: currentUser.username)
-
-            var queryArray = query.findObjects()
-
+            var notificationQueryArray = notificationQuery.findObjects()
 
             var notificationArray : [Note] = []
 
-            println(queryArray)
-
-            for n in queryArray {
+            for n in notificationQueryArray {
                 var note : Note = Note(fromUser: n.valueForKey("fromUser") as String, toUser: n.valueForKey("toUser") as String, notificationType: n.valueForKey("notificationType") as String)
 
                 if n.valueForKey("perspectiveId") != nil
@@ -63,6 +62,26 @@ class DashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             }
 
             self.notificationQuery = notificationArray
+            
+            var tib = UINib(nibName: "TimelineCellNib", bundle: nil)
+            timeStream.registerNib(tib, forCellReuseIdentifier: "tCell")
+            
+            var timelineQuery = PFQuery(className: "Perspective")
+            timelineQuery.whereKey("complete", equalTo: true)
+            timelineQuery.whereKey("collaborators", equalTo: currentUser.username)
+            
+            var timelineQueryArray = timelineQuery.findObjects()
+            
+            var timelineArray : [Timeline] = []
+            
+            for t in timelineQueryArray {
+                var timeline : Timeline = Timeline(theme: t.valueForKey("theme") as String, perspectiveId: t.valueForKey("objectId") as String)
+                timelineArray.append(timeline)
+            }
+            
+            println(timelineArray[0].theme)
+            
+            self.timelineQuery = timelineArray
 
         } else {
             usernameText.text = ""
@@ -99,29 +118,46 @@ class DashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(tableView == self.noteStream){
         return self.notificationQuery.count
+        }
+        else {
+        return self.timelineQuery.count
+        }
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        var cell : NoteCell = self.noteStream.dequeueReusableCellWithIdentifier("cell") as NoteCell
+        if(tableView == self.noteStream){
+        var cell : NoteCell = self.noteStream.dequeueReusableCellWithIdentifier("nCell") as NoteCell
         cell.noteLabel.text = self.notificationQuery[indexPath.row].notificationType as String
         return cell
+        }
+        else {
+        var cell : TimelineCell = self.timeStream.dequeueReusableCellWithIdentifier("tCell") as TimelineCell
+        cell.timeLabel.text =  self.timelineQuery[indexPath.row].theme as String
+        return cell
+        }
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         println("Row selected")
-        if self.notificationQuery[indexPath.row].notificationType as String == "invite"{
-           var perspectiveId = self.notificationQuery[indexPath.row].perspectiveId as String!
-            gotoPlayback(perspectiveId, isComplete: false)
-        }
-        else if self.notificationQuery[indexPath.row].notificationType as String == "complete"{
-           var perspectiveId = self.notificationQuery[indexPath.row].perspectiveId as String!
-            gotoPlayback(perspectiveId, isComplete: true)
+        if(tableView == self.noteStream){
+            if self.notificationQuery[indexPath.row].notificationType as String == "invite"{
+               var perspectiveId = self.notificationQuery[indexPath.row].perspectiveId as String!
+                gotoPlayback(perspectiveId, isComplete: false)
+            }
+            else if self.notificationQuery[indexPath.row].notificationType as String == "complete"{
+               var perspectiveId = self.notificationQuery[indexPath.row].perspectiveId as String!
+                gotoPlayback(perspectiveId, isComplete: true)
+            }
+            else {
+
+            }
         }
         else {
-
+            var perspectiveId = self.timelineQuery[indexPath.row].perspectiveId as String!
+            gotoPlayback(perspectiveId, isComplete: true)
         }
-
     }
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

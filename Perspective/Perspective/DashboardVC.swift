@@ -90,6 +90,7 @@ class DashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             newPerspective.hidden = true
             signupButton.hidden = false
             noteStream.hidden = true
+            timeStream.hidden = true
         }
     }
 

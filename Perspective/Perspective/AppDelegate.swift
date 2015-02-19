@@ -18,14 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
 
-        Parse.setApplicationId("", clientKey: "")
+        Parse.setApplicationId("JQSo61J6lETTMcbiUMPjwlYJBn7I0JdHjatG4lD6", clientKey: "OaAXhHnBgMuVw0R2xMPzKGdNGZu7PJhwHjmLzUEh")
 
         let credentialsProvider = AWSCognitoCredentialsProvider.credentialsWithRegionType(
             AWSRegionType.USEast1,
-            accountId: "",
-            identityPoolId: "",
-            unauthRoleArn: "",
-            authRoleArn: "")
+            accountId: "903362674655",
+            identityPoolId: "us-east-1:2e321e2b-0ae3-42be-aec8-480025f4e140",
+            unauthRoleArn: "arn:aws:iam::903362674655:role/Cognito_PerspectiveUnauth_DefaultRole",
+            authRoleArn: "arn:aws:iam::903362674655:role/Cognito_PerspectiveAuth_DefaultRole")
         let defaultServiceConfiguration = AWSServiceConfiguration(
             region: AWSRegionType.USEast1,
             credentialsProvider: credentialsProvider)

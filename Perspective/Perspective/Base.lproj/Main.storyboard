@@ -284,18 +284,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="22o-LY-ZkH">
-                                <rect key="frame" x="96" y="420" width="124" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
-                                <state key="normal" title="log out">
-                                    <color key="titleColor" red="0.96127288509999997" green="0.96127288509999997" blue="0.96127288509999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="logout:" destination="w4y-Gc-AxM" eventType="touchUpInside" id="DGB-Ks-987"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zeG-ck-8kO">
                                 <rect key="frame" x="30" y="469" width="261" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -309,7 +297,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PCH-4O-tYW">
-                                <rect key="frame" x="47" y="333" width="223" height="41"/>
+                                <rect key="frame" x="54" y="334" width="223" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <state key="normal" title="log in">
@@ -320,15 +308,8 @@
                                     <action selector="gotoLogin:" destination="w4y-Gc-AxM" eventType="touchUpInside" id="sL3-Jg-AjH"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="d a s h b o a r d" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ri5-oU-Ngq">
-                                <rect key="frame" x="30" y="115" width="261" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
-                                <color key="textColor" red="0.96127288509999997" green="0.96127288509999997" blue="0.96127288509999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lY3-hs-Ql5">
-                                <rect key="frame" x="28" y="263" width="261" height="41"/>
+                                <rect key="frame" x="28" y="66" width="261" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <state key="normal" title="playback">
@@ -351,6 +332,28 @@
                                     <action selector="signupTapped:" destination="w4y-Gc-AxM" eventType="touchUpInside" id="m1d-lM-3Nj"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="DMn-wx-LmB">
+                                <rect key="frame" x="174" y="147" width="130" height="284"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="w4y-Gc-AxM" id="rZh-bI-n3X"/>
+                                    <outlet property="delegate" destination="w4y-Gc-AxM" id="R11-xS-lEH"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="22o-LY-ZkH">
+                                <rect key="frame" x="98" y="412" width="124" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal" title="log out">
+                                    <color key="titleColor" red="0.96127288509999997" green="0.96127288509999997" blue="0.96127288509999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="w4y-Gc-AxM" eventType="touchUpInside" id="DGB-Ks-987"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -360,6 +363,7 @@
                         <outlet property="loginButton" destination="PCH-4O-tYW" id="szK-ih-Vuf"/>
                         <outlet property="logoutButton" destination="22o-LY-ZkH" id="xJY-Qz-VNY"/>
                         <outlet property="newPerspective" destination="zeG-ck-8kO" id="NvQ-dd-fUf"/>
+                        <outlet property="noteStream" destination="DMn-wx-LmB" id="sfj-59-61Q"/>
                         <outlet property="playbackButton" destination="lY3-hs-Ql5" id="Mdy-tj-hhT"/>
                         <outlet property="signupButton" destination="Wwq-x4-w0E" id="Agy-cd-SPI"/>
                         <outlet property="usernameText" destination="VF5-nN-Fp0" id="jty-7y-YVD"/>

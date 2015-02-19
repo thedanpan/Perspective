@@ -50,9 +50,10 @@ class DashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             
             var notificationArray : [Note] = []
             
-            for notification in queryArray {
+            for notification in queryArray {d
                 let note : Note = Note(fromUser: notification.valueForKey("fromUser") as String, toUser: notification.valueForKey("toUser") as String, notificationType: notification.valueForKey("notificationType") as String)
                 if notification.valueForKey("perspectiveId") != nil
+                    
                 {
                     note.perspectiveId = notification.valueForKey("perspectiveId") as? String
                 }

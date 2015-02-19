@@ -16,7 +16,7 @@ class PerspectiveFieldsVC: UIViewController, UITextFieldDelegate , UIPickerViewD
     @IBOutlet weak var submit: UIButton!
     var url: String!
     var toUser: String!
-    var friends = ["hello"]
+    var friends : [String] = []
     var pickedFriend: String!
     
     @IBOutlet weak var txtIncompleteFieldsMessage: UILabel!
@@ -28,19 +28,13 @@ class PerspectiveFieldsVC: UIViewController, UITextFieldDelegate , UIPickerViewD
     }
     
     func queryFriends() {
+        
         var query = PFUser.query()
-        query.whereKey("username", equalTo: PFUser.currentUser().username)
-        println(query)
         var user = query.findObjects()
-        println(user)
-        var friendList = user[0].valueForKey("friendList") as NSArray!
         
-        println(friendList)
-        
-        for friend in friendList {
-            var string:String = friend as String
+        for friend in user {
+            var string:String = friend.valueForKey("username") as String
             friends.append(string)
-            println(friends)
         }
     }
     

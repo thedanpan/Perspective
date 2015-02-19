@@ -17,23 +17,16 @@ class WhosNextVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     var url: String!
     var perspectiveId: String!
     var toUser : String!
-    var friends = ["hello"]
+   var friends : [String] = []
     var pickedFriend: String!
     
     func queryFriends() {
         var query = PFUser.query()
-        query.whereKey("username", equalTo: PFUser.currentUser().username)
-        println(query)
         var user = query.findObjects()
-        println(user)
-        var friendList = user[0].valueForKey("friendList") as NSArray!
         
-        println(friendList)
-        
-        for friend in friendList {
-            var string:String = friend as String
+        for friend in user {
+            var string:String = friend.valueForKey("username") as String
             friends.append(string)
-            println(friends)
         }
     }
 
@@ -115,7 +108,7 @@ class WhosNextVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     func createNextNotification(perspectiveId: String) {
         var notification = PFObject(className: "Notification")
         notification["fromUser"] = PFUser.currentUser().username
-        notification["toUser"] = perspectiveId
+        notification["toUser"] = pickedFriend
         notification["notificationType"] = "invite"
         notification["perspectiveId"] = perspectiveId
         notification.saveInBackgroundWithBlock {

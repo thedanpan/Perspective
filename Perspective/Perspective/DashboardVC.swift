@@ -41,6 +41,7 @@ class DashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             loginButton.hidden = true
             signupButton.hidden = true
             noteStream.hidden = false
+            timeStream.hidden = false
             var nib = UINib(nibName: "NoteCellNib", bundle: nil)
             noteStream.registerNib(nib, forCellReuseIdentifier: "nCell")
             
@@ -78,8 +79,6 @@ class DashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 var timeline : Timeline = Timeline(theme: t.valueForKey("theme") as String, perspectiveId: t.valueForKey("objectId") as String)
                 timelineArray.append(timeline)
             }
-            
-//            println(timelineArray[0].theme)
             
             self.timelineQuery = timelineArray
 

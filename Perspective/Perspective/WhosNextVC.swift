@@ -8,28 +8,63 @@
 
 import UIKit
 
-class WhosNextVC: UIViewController {
+class WhosNextVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var submitButton: UIButton!
+    
+    @IBOutlet var contactList: UIPickerView!
     
     var url: String!
     var perspectiveId: String!
     var toUser : String!
+    var friends = ["hello"]
+    var pickedFriend: String!
+    
+    func queryFriends() {
+        var query = PFUser.query()
+        query.whereKey("username", equalTo: PFUser.currentUser().username)
+        println(query)
+        var user = query.findObjects()
+        println(user)
+        var friendList = user[0].valueForKey("friendList") as NSArray!
+        
+        println(friendList)
+        
+        for friend in friendList {
+            var string:String = friend as String
+            friends.append(string)
+            println(friends)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        instructionsText.text = "Pick the next collaborator"
+        queryFriends()
+        NSNotificationCenter.defaultCenter().postNotificationName("whosNext", object: nil)
+        contactList.delegate = self
+        contactList.dataSource = self
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return friends[row]
+    }
+    
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    // returns the # of rows in each component..
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return friends.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        pickedFriend = friends[row]
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func gotoPickCollaborator(sender: UIButton) {
-        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("PickCollaboratorVC") as PickCollaboratorVC
-        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func setPerspectiveComplete(perspective: PFObject) {

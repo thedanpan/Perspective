@@ -8,8 +8,10 @@
 
 import UIKit
 
-class DashboardVC: UIViewController {
+class DashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+    var tableData : [String] = ["Darrin", "Dionne", "Scott", "Dani"]
     @IBOutlet weak var usernameText: UILabel!
     
     @IBOutlet weak var logoutButton: UIButton!
@@ -22,6 +24,11 @@ class DashboardVC: UIViewController {
     
     @IBOutlet weak var playbackButton: UIButton!
     
+    @IBOutlet var noteStream: UITableView!
+    
+    var notificationQuery : [Note] = []
+    
+    
     func displayUsername(){
         var currentUser = PFUser.currentUser()
         if currentUser != nil {
@@ -31,12 +38,36 @@ class DashboardVC: UIViewController {
             newPerspective.hidden = false
             loginButton.hidden = true
             signupButton.hidden = true
+            noteStream.hidden = false
+            var nib = UINib(nibName: "NoteCellNib", bundle: nil)
+            noteStream.registerNib(nib, forCellReuseIdentifier: "cell")
+            
+            var query = PFQuery(className: "Notification")
+            query.whereKey("toUser", equalTo: currentUser.username as String)
+            
+            var queryArray : NSArray = query.findObjects()
+
+            
+            var notificationArray : [Note] = []
+            
+            for notification in queryArray {
+                let note : Note = Note(fromUser: notification.valueForKey("fromUser") as String, toUser: notification.valueForKey("toUser") as String, notificationType: notification.valueForKey("notificationType") as String)
+                if notification.valueForKey("perspectiveId") != nil
+                {
+                    note.perspectiveId = notification.valueForKey("perspectiveId") as? String
+                }
+                notificationArray.append(note)
+            }
+            
+            self.notificationQuery = queryArray
+            
         } else {
             usernameText.text = ""
             logoutButton.hidden = true
             loginButton.hidden = false
             newPerspective.hidden = true
             signupButton.hidden = false
+            noteStream.hidden = true
         }
     }
     
@@ -63,6 +94,25 @@ class DashboardVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.notificationQuery.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        var cell : NoteCell = self.noteStream.dequeueReusableCellWithIdentifier("cell") as NoteCell
+        println(self.notificationQuery)
+        cell.noteLabel.text = self.notificationQuery[indexPath.row].no as String
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        println("Row selected")
+        
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 70
+    }
     func signupReload(notification: NSNotification){
         //load data here
         self.reloadInputViews()
@@ -81,7 +131,7 @@ class DashboardVC: UIViewController {
         }
         displayUsername()
     }
-    
+   
     @IBAction func gotoLogin(sender: UIButton) {
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("LoginVC") as LoginVC
         self.navigationController?.pushViewController(vc, animated: true)
@@ -106,4 +156,5 @@ class DashboardVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
         println("Leaving DashboardVC, pushing RecordVC.")
     }
+    
 }

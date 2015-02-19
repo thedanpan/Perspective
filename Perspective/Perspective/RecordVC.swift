@@ -105,21 +105,4 @@ class RecordVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         }
     }
 
-    
-//    func createVideoParseObj(key: String) {
-//        var video = PFObject(className:"Video")
-//        video["url"] = "https://s3.amazonaws.com/theperspectiveapp/\(key)"
-//        video["user"] = "\(currentUser.username)"
-//        video.saveInBackgroundWithBlock {
-//            (success: Bool, error: NSError!) -> Void in
-//            if (success) {
-//                // The object has been saved.
-//                println("saved to Parse")
-//            } else {
-//                // There was a problem, check error.description
-//
-//            }
-//        }
-//    }
-
 }

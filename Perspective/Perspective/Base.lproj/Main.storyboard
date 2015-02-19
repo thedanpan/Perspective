@@ -344,6 +344,15 @@
                                     <action selector="gotoPlayback:" destination="w4y-Gc-AxM" eventType="touchUpInside" id="NbT-dr-1kJ"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="OPy-i1-ZMo">
+                                <rect key="frame" x="35" y="147" width="112" height="284"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="w4y-Gc-AxM" id="Hf4-hT-UOs"/>
+                                    <outlet property="delegate" destination="w4y-Gc-AxM" id="Fp0-7H-pTm"/>
+                                </connections>
+                            </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="DMn-wx-LmB">
                                 <rect key="frame" x="174" y="147" width="130" height="284"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -366,6 +375,7 @@
                         <outlet property="noteStream" destination="DMn-wx-LmB" id="sfj-59-61Q"/>
                         <outlet property="playbackButton" destination="lY3-hs-Ql5" id="Mdy-tj-hhT"/>
                         <outlet property="signupButton" destination="Wwq-x4-w0E" id="Agy-cd-SPI"/>
+                        <outlet property="timeStream" destination="OPy-i1-ZMo" id="dGe-0E-A5Z"/>
                         <outlet property="usernameText" destination="VF5-nN-Fp0" id="jty-7y-YVD"/>
                     </connections>
                 </viewController>

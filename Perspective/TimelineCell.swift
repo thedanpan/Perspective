@@ -10,6 +10,8 @@ import UIKit
 
 class TimelineCell: UITableViewCell {
 
+    @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var timeAction: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

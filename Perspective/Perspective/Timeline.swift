@@ -8,17 +8,12 @@
 
 import UIKit
 
-class Timeline: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+class Timeline : NSObject {
+    var theme: String
+//    var videos: NSArray
+    var perspectiveId: String
+    init(theme: String, perspectiveId: String) {
+        self.theme = theme
+        self.perspectiveId = perspectiveId
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

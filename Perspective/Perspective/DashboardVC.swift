@@ -79,7 +79,7 @@ class DashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 timelineArray.append(timeline)
             }
             
-            println(timelineArray[0].theme)
+//            println(timelineArray[0].theme)
             
             self.timelineQuery = timelineArray
 

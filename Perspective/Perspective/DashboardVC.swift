@@ -94,7 +94,7 @@ class DashboardVC: UIViewController {
     
     @IBAction func gotoPlayback(sender: UIButton) {
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("PlaybackVC") as PlaybackVC
-        vc.perspectiveId = "CIXuizXrzZ"
+        vc.perspectiveId = "AJ7G5z7cnN"
         vc.playingCompletedPerspective = true
         self.navigationController?.pushViewController(vc, animated: true)
         println("Leaving DashboardVC, pushing PlaybackVC.")

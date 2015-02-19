@@ -14,7 +14,7 @@ class WhosNextVC: UIViewController {
     
     var url: String!
     var perspectiveId: String!
-    var receiver : String?
+    var toUser : String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,18 +50,19 @@ class WhosNextVC: UIViewController {
                 perspective.saveInBackgroundWithBlock {
                     (success: Bool, error: NSError!) -> Void in
                     if (success) {
+                        var perspectiveId = perspective.objectId
+                        var collaborators: NSArray = perspective["collaborators"] as NSArray
                         let videosArray:NSArray = perspective["videos"] as NSArray
                         let videosArrayCount: Int = videosArray.count
                         println(videosArrayCount)
                         let perspectiveNumOfClips: Int = perspective["numOfClips"] as Int
                         println(perspectiveNumOfClips)
                         if perspectiveNumOfClips == videosArrayCount {
-//                          CREATE COMPLETION NOTIFICATION
-                            println("Inside completion check - if")
+                            self.createCompleteNotification(perspectiveId, collaborators: collaborators)
                             self.setPerspectiveComplete(perspective)
                           } else {
                             println("Inside completion check - else")
-//                          CREATE NOTIFICATION FOR NEXT COLLABORATOR
+                            self.createNextNotification(perspectiveId)
                           }
                     } else {
                         NSLog("%@", error)
@@ -71,6 +72,42 @@ class WhosNextVC: UIViewController {
             }
                 self.navigationController?.popToRootViewControllerAnimated(true)
                 println("Perspective updating in background, pop to root VC.")
+        }
+    }
+    
+    func createNextNotification(perspectiveId: String) {
+        var notification = PFObject(className: "Notification")
+        notification["fromUser"] = PFUser.currentUser().username
+        notification["toUser"] = perspectiveId
+        notification["notificationType"] = "invite"
+        notification["perspectiveId"] = perspectiveId
+        notification.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError!) -> Void in
+            if (success) {
+                println("Sucessfully saved Notification")
+            } else {
+                println("Notification did not save")
+            }
+        }
+        
+    }
+    
+    func createCompleteNotification(perspectiveId: String, collaborators: NSArray) {
+        for user in collaborators {
+            var notification = PFObject(className: "Notification")
+            notification["fromUser"] = PFUser.currentUser().username
+            notification["toUser"] = user as String
+            notification["notificationType"] = "invite"
+            notification["perspectiveId"] = perspectiveId
+            notification.saveInBackgroundWithBlock {
+                (success: Bool, error: NSError!) -> Void in
+                if (success) {
+                    println("Sucessfully saved Notification")
+                } else {
+                    println("Notification did not save")
+                }
+            }
+            println("Perspective complete notification successfully created.")
         }
     }
 }

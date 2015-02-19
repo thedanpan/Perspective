@@ -109,6 +109,8 @@ class DashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "signupReload:", name:"signedUp", object: nil)
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loginReload:", name:"loggedIn", object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "whosNextReload:", name:"whosNext", object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -175,13 +177,17 @@ class DashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         //load data here
         self.reloadInputViews()
     }
+    
+    func whosNextReload(notification: NSNotification){
+        //load data here
+        self.reloadInputViews()
+    }
 
     @IBAction func logout(sender: UIButton) {
         PFUser.logOut()
-        var currentUser = PFUser.currentUser()
-        if let navController = self.navigationController {
-            navController.popViewControllerAnimated(true)
-        }
+//        if let navController = self.navigationController {
+//            navController.popViewControllerAnimated(true)
+//        }
         displayUsername()
     }
 

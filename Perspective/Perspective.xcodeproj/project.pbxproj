@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		092AD8D01A94DD01005108F1 /* PickCollaboratorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092AD8CE1A94DD01005108F1 /* PickCollaboratorVC.swift */; };
 		092AD8D11A94DD01005108F1 /* PickCollaboratorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092AD8CF1A94DD01005108F1 /* PickCollaboratorVC.xib */; };
+		092BAAC11A95384B00B942F2 /* NoteCellNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092BAAC01A95384B00B942F2 /* NoteCellNib.xib */; };
+		092BAAC31A95388300B942F2 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092BAAC21A95388300B942F2 /* NoteCell.swift */; };
+		092BAAC51A95503900B942F2 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092BAAC41A95503900B942F2 /* Note.swift */; };
+		092BAAC71A95719400B942F2 /* TimelineCellNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092BAAC61A95719400B942F2 /* TimelineCellNib.xib */; };
+		092BAAC91A9571BD00B942F2 /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092BAAC81A9571BD00B942F2 /* TimelineCell.swift */; };
+		092BAACD1A9577BD00B942F2 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092BAACC1A9577BD00B942F2 /* Timeline.swift */; };
 		09360ADC1A8FD9E9005972F5 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09360ADA1A8FD9E9005972F5 /* DashboardVC.swift */; };
 		09360ADD1A8FD9E9005972F5 /* DashboardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09360ADB1A8FD9E9005972F5 /* DashboardVC.xib */; };
 		09360AE21A912B08005972F5 /* PerspectiveFieldsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09360AE01A912B08005972F5 /* PerspectiveFieldsVC.swift */; };
@@ -63,6 +69,12 @@
 		09172C2C1A92A8AE00967EE6 /* Perspective-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Perspective-Bridging-Header.h"; sourceTree = "<group>"; };
 		092AD8CE1A94DD01005108F1 /* PickCollaboratorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickCollaboratorVC.swift; sourceTree = "<group>"; };
 		092AD8CF1A94DD01005108F1 /* PickCollaboratorVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickCollaboratorVC.xib; sourceTree = "<group>"; };
+		092BAAC01A95384B00B942F2 /* NoteCellNib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteCellNib.xib; sourceTree = "<group>"; };
+		092BAAC21A95388300B942F2 /* NoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		092BAAC41A95503900B942F2 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Note.swift; path = ../Note.swift; sourceTree = "<group>"; };
+		092BAAC61A95719400B942F2 /* TimelineCellNib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineCellNib.xib; sourceTree = "<group>"; };
+		092BAAC81A9571BD00B942F2 /* TimelineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineCell.swift; path = ../TimelineCell.swift; sourceTree = "<group>"; };
+		092BAACC1A9577BD00B942F2 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		09360ADA1A8FD9E9005972F5 /* DashboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		09360ADB1A8FD9E9005972F5 /* DashboardVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardVC.xib; sourceTree = "<group>"; };
 		09360AE01A912B08005972F5 /* PerspectiveFieldsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerspectiveFieldsVC.swift; sourceTree = "<group>"; };
@@ -175,6 +187,9 @@
 				0942F8F61A8EA5A200B5D566 /* LaunchScreen.xib */,
 				0942F8EB1A8EA5A200B5D566 /* Supporting Files */,
 				0942F92E1A8EC74300B5D566 /* LoginVC.swift */,
+				092BAAC01A95384B00B942F2 /* NoteCellNib.xib */,
+				092BAAC21A95388300B942F2 /* NoteCell.swift */,
+				092BAAC41A95503900B942F2 /* Note.swift */,
 				0942F9301A8EC87400B5D566 /* SignupVC.swift */,
 				09360ADA1A8FD9E9005972F5 /* DashboardVC.swift */,
 				09360ADB1A8FD9E9005972F5 /* DashboardVC.xib */,
@@ -188,6 +203,9 @@
 				09BA74B11A9435870023C476 /* WhosNextVC.xib */,
 				092AD8CE1A94DD01005108F1 /* PickCollaboratorVC.swift */,
 				092AD8CF1A94DD01005108F1 /* PickCollaboratorVC.xib */,
+				092BAAC81A9571BD00B942F2 /* TimelineCell.swift */,
+				092BAAC61A95719400B942F2 /* TimelineCellNib.xib */,
+				092BAACC1A9577BD00B942F2 /* Timeline.swift */,
 			);
 			path = Perspective;
 			sourceTree = "<group>";
@@ -327,7 +345,9 @@
 			files = (
 				09BA74B31A9435870023C476 /* WhosNextVC.xib in Resources */,
 				0942F8F31A8EA5A200B5D566 /* Main.storyboard in Resources */,
+				092BAAC71A95719400B942F2 /* TimelineCellNib.xib in Resources */,
 				09BA74AB1A92C9F00023C476 /* PlaybackVC.xib in Resources */,
+				092BAAC11A95384B00B942F2 /* NoteCellNib.xib in Resources */,
 				09360AE71A91437B005972F5 /* RecordVC.xib in Resources */,
 				09360ADD1A8FD9E9005972F5 /* DashboardVC.xib in Resources */,
 				092AD8D11A94DD01005108F1 /* PickCollaboratorVC.xib in Resources */,
@@ -351,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092BAAC91A9571BD00B942F2 /* TimelineCell.swift in Sources */,
 				092AD8D01A94DD01005108F1 /* PickCollaboratorVC.swift in Sources */,
 				0942F9311A8EC87400B5D566 /* SignupVC.swift in Sources */,
 				09BA74AA1A92C9F00023C476 /* PlaybackVC.swift in Sources */,
@@ -358,6 +379,9 @@
 				09360ADC1A8FD9E9005972F5 /* DashboardVC.swift in Sources */,
 				09BA74B21A9435870023C476 /* WhosNextVC.swift in Sources */,
 				09360AE61A91437B005972F5 /* RecordVC.swift in Sources */,
+				092BAAC51A95503900B942F2 /* Note.swift in Sources */,
+				092BAAC31A95388300B942F2 /* NoteCell.swift in Sources */,
+				092BAACD1A9577BD00B942F2 /* Timeline.swift in Sources */,
 				0942F8EE1A8EA5A200B5D566 /* AppDelegate.swift in Sources */,
 				0942F92F1A8EC74300B5D566 /* LoginVC.swift in Sources */,
 			);

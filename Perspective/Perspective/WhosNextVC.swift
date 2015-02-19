@@ -59,10 +59,12 @@ class WhosNextVC: UIViewController {
                         println(perspectiveNumOfClips)
                         if perspectiveNumOfClips == videosArrayCount {
                             self.createCompleteNotification(perspectiveId, collaborators: collaborators)
+                            self.deleteNotification(perspectiveId)
                             self.setPerspectiveComplete(perspective)
                           } else {
                             println("Inside completion check - else")
                             self.createNextNotification(perspectiveId)
+                            self.deleteNotification(perspectiveId)
                           }
                     } else {
                         NSLog("%@", error)
@@ -90,6 +92,23 @@ class WhosNextVC: UIViewController {
             }
         }
         
+    }
+    
+    func deleteNotification(perspectiveId: String) {
+        var query = PFQuery(className: "Notification")
+        query.whereKey("toUser", equalTo:PFUser.currentUser().username)
+        query.whereKey("perspectiveId", equalTo:perspectiveId)
+        query.findObjectsInBackgroundWithBlock {
+            (notifications: [AnyObject]!, error: NSError!) -> Void in
+            if error == nil {
+                NSLog("Successfully retrieved \(notifications.count) notifications.")
+                for notification in notifications {
+                    notification.deleteInBackground()
+                }
+            } else {
+                NSLog("Error: %@ %@", error, error.userInfo!)
+            }
+        }
     }
     
     func createCompleteNotification(perspectiveId: String, collaborators: NSArray) {

@@ -60,12 +60,30 @@ class PlaybackVC: AVPlayerViewController { // UIViewController
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "AVPlayerItemDidPlayToEndTimeNotification", object: nil)
         self.dismissViewControllerAnimated(false, completion: nil)
         if playingCompletedPerspective == true {
+            self.deleteNotification(perspectiveId)
             self.navigationController?.popToRootViewControllerAnimated(true)
         } else {
             let vc = self.storyboard?.instantiateViewControllerWithIdentifier("RecordVC") as RecordVC
             vc.newPerspective = false
             vc.perspectiveId = perspectiveId
             self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    func deleteNotification(perspectiveId: String) {
+        var query = PFQuery(className: "Notification")
+        query.whereKey("toUser", equalTo:PFUser.currentUser().username)
+        query.whereKey("perspectiveId", equalTo:perspectiveId)
+        query.findObjectsInBackgroundWithBlock {
+            (notifications: [AnyObject]!, error: NSError!) -> Void in
+            if error == nil {
+                NSLog("Successfully retrieved \(notifications.count) notifications.")
+                for notification in notifications {
+                    notification.deleteInBackground()
+                }
+            } else {
+                NSLog("Error: %@ %@", error, error.userInfo!)
+            }
         }
     }
 }

@@ -78,7 +78,7 @@ class WhosNextVC: UIViewController {
     func createNextNotification(perspectiveId: String) {
         var notification = PFObject(className: "Notification")
         notification["fromUser"] = PFUser.currentUser().username
-        notification["toUser"] = "darrin"
+        notification["toUser"] = perspectiveId
         notification["notificationType"] = "invite"
         notification["perspectiveId"] = perspectiveId
         notification.saveInBackgroundWithBlock {
@@ -93,9 +93,7 @@ class WhosNextVC: UIViewController {
     }
     
     func createCompleteNotification(perspectiveId: String, collaborators: NSArray) {
-        var users: NSArray = ["Dick", "John", "Harry"]
-        
-        for user in users {
+        for user in collaborators {
             var notification = PFObject(className: "Notification")
             notification["fromUser"] = PFUser.currentUser().username
             notification["toUser"] = user as String

@@ -128,11 +128,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <searchBar contentMode="redraw" id="7EX-PY-DnN">
-                                <rect key="frame" x="43" y="321" width="234" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="who's next?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oOw-EQ-Smq">
                                 <rect key="frame" x="73" y="293" width="175" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -148,14 +143,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TS0-q3-rUQ">
-                                <rect key="frame" x="94" y="415" width="134" height="41"/>
+                                <rect key="frame" x="93" y="483" width="134" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <state key="normal" title="submit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="submitPerspectiveFields:" destination="9Rr-0M-2x3" eventType="touchUpInside" id="etZ-Be-AdN"/>
+                                    <action selector="submitPerspectiveFields:" destination="9Rr-0M-2x3" eventType="touchUpInside" id="2gR-y6-DS1"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="n e w   p e r s p e c t i v e" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G3P-KZ-vV2">
@@ -165,14 +160,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" id="CkM-H9-0vq">
+                                <rect key="frame" x="16" y="330" width="288" height="127"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="XRP-YC-xnJ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="contactList" destination="CkM-H9-0vq" id="DI1-ex-fzs"/>
                         <outlet property="numOfClips" destination="OI5-n4-MIt" id="GKg-jS-wYc"/>
-                        <outlet property="searchFriends" destination="7EX-PY-DnN" id="U3f-rh-fTV"/>
                         <outlet property="submit" destination="TS0-q3-rUQ" id="TGv-Be-erC"/>
                         <outlet property="theme" destination="B5o-ZL-12u" id="aZg-pE-6Ea"/>
                         <outlet property="txtIncompleteFieldsMessage" destination="AGj-Xs-Rm3" id="NZe-ZK-DQv"/>
@@ -252,21 +251,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lmM-ut-pTj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="815" y="1030"/>
-        </scene>
-        <!--PickCollaboratorVC-->
-        <scene sceneID="ENf-9h-57E">
-            <objects>
-                <viewController storyboardIdentifier="PickCollaboratorVC" title="PickCollaboratorVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qoX-BN-QLm" customClass="PickCollaboratorVC" customModule="Perspective" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uI4-IO-wMs">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4mf-tF-RoK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1182" y="1030"/>
         </scene>
         <!--DashboardVC.swift-->
         <scene sceneID="bYs-kI-CLg">

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PerspectiveFieldsVC: UIViewController, UITextFieldDelegate {
+class PerspectiveFieldsVC: UIViewController, UITextFieldDelegate , UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var theme: UITextField!
     @IBOutlet weak var numOfClips: UITextField!
@@ -16,12 +16,43 @@ class PerspectiveFieldsVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var submit: UIButton!
     var url: String!
     var toUser: String!
-
+    var friends = ["hello"]
+    var pickedFriend: String!
+    
     @IBOutlet weak var txtIncompleteFieldsMessage: UILabel!
     
+    @IBOutlet var contactList: UIPickerView!
+    
+    
+    override func viewWillAppear(animated: Bool) {
+    
+    }
+    
+    func queryFriends() {
+        var query = PFUser.query()
+        query.whereKey("username", equalTo: PFUser.currentUser().username)
+        println(query)
+        var user = query.findObjects()
+        println(user)
+        var friendList = user[0].valueForKey("friendList") as NSArray!
+        
+        println(friendList)
+        
+        for friend in friendList {
+            var string:String = friend as String
+            friends.append(string)
+            println(friends)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        queryFriends()
+        contactList.delegate = self
+        contactList.dataSource = self
+//        pickerView.dataSource = self
+//        pickerView.delegate = self
+//        pickerView.reloadAllComponents
         // Do any additional setup after loading the view.
     }
     
@@ -35,7 +66,25 @@ class PerspectiveFieldsVC: UIViewController, UITextFieldDelegate {
         numOfClips.endEditing(true)
     }
     
-    @IBAction func submitPerspectiveFields(sender: AnyObject) {
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return friends[row]
+    }
+    
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    // returns the # of rows in each component..
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return friends.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        pickedFriend = friends[row]
+    }
+    
+    @IBAction func submitPerspectiveFields(sender: UIButton) {
         var themeEntered = theme.text
         var numOfClipsEntered = numOfClips.text.toInt()
         
@@ -70,7 +119,7 @@ class PerspectiveFieldsVC: UIViewController, UITextFieldDelegate {
     func createNotification(perspectiveId: String) {
         var notification = PFObject(className: "Notification")
         notification["fromUser"] = PFUser.currentUser().username
-        notification["toUser"] = "darrin"
+        notification["toUser"] = pickedFriend
         notification["notificationType"] = "invite"
         notification["perspectiveId"] = perspectiveId
         notification.saveInBackgroundWithBlock {
@@ -89,14 +138,4 @@ class PerspectiveFieldsVC: UIViewController, UITextFieldDelegate {
     }
     
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

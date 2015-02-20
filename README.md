@@ -7,13 +7,16 @@ An app that invites a collaboration of perspectives
 - David Rifkin
 - Daniella Shin
 
-## MVP
+## User Stories
 - A user can signup
 - A user can login/logout
-- A user can create a Story - i.e. set theme, clip duration, and number of clips*
-- A user can record a Video through the app interface
-- A user can store a Video locally on device
-(* can be saved to database, navigation path currently in implementation)
+- A user can create a new Perspective Story:
+   - record a video
+   - set theme
+   - preset number of videos for story to include
+   - the next collaborator
+- A user can be notified of a new friend request, and an invitation to join a story
+- A user can view stories contributed to in a timeline only after preset number of videos set by the author of the Story is reached
 
 ## [Trello](https://trello.com/b/BvG14dyF/perspective)
 

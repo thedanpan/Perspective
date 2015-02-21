@@ -27,6 +27,10 @@ class DashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
     @IBOutlet var timeStream: UITableView!
     
+    @IBOutlet var newInviteFromTitle: UILabel!
+    
+    @IBOutlet var timelineTitle: UILabel!
+    
     var notificationQuery : [Note] = []
 
     var timelineQuery : [Timeline] = []
@@ -42,6 +46,8 @@ class DashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             signupButton.hidden = true
             noteStream.hidden = false
             timeStream.hidden = false
+            timelineTitle.hidden = false
+            newInviteFromTitle.hidden = false
             var nib = UINib(nibName: "NoteCellNib", bundle: nil)
             noteStream.registerNib(nib, forCellReuseIdentifier: "nCell")
             
@@ -90,6 +96,8 @@ class DashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             signupButton.hidden = false
             noteStream.hidden = true
             timeStream.hidden = true
+            timelineTitle.hidden = true
+            newInviteFromTitle.hidden = true
         }
     }
 
@@ -131,7 +139,7 @@ class DashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         if(tableView == self.noteStream){
         var cell : NoteCell = self.noteStream.dequeueReusableCellWithIdentifier("nCell") as NoteCell
-        cell.noteLabel.text = self.notificationQuery[indexPath.row].notificationType as String
+        cell.noteLabel.text = self.notificationQuery[indexPath.row].fromUser as String
         return cell
         }
         else {
@@ -163,7 +171,7 @@ class DashboardVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 70
+        return 60
     }
 
 

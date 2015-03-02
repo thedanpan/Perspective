@@ -1,5 +1,8 @@
 # Perspective
-An app that invites a collaboration of perspectives
+An app that reimagines the side effects of global hyperconnectivity.
+Users capture personal point of views through video clips and invite friends to contribute their perspectives based on a common theme.
+
+(Swift, Parse, MongoDB, Xcode)
 
 ## Team
 - Scott Enriquez

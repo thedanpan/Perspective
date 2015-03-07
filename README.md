@@ -5,12 +5,12 @@ Users capture personal point of views through video clips and invite friends to 
 (Swift, Parse, MongoDB, Xcode)
 
 ## Team Members
-**Team Lead, User Experience Design** : Daniella Shin
+Daniella Shin : **Team Lead, User Experience Design**
 
-**Architecture, Front-End Development** : Scott Enriquez
+Scott Enriquez : **Architecture, Front-End Development**
 
-**Git Master, Back-End Development** : Darrin Reeves
+Darrin Reeves : **Git Master, Back-End Development**
 
-**User Interface Design, Front-End Development** : David Rifkin
+David Rifkin : **User Interface Design, Front-End Development**
 
 ## [Trello](https://trello.com/b/BvG14dyF/perspective)

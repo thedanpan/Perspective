@@ -6,10 +6,10 @@ An iOS app that challenges digital communication norms. Perspective reimagines t
 (Swift, Parse, AWS S3, Xcode)
 
 ## Team Members
-Daniella Shin : **Team Lead, User Experience Design**
+Scott Enriquez : **Data Architect & Front-End Development**
 
-Scott Enriquez : **Architecture, Front-End Development**
+Darrin Reeves : **Git Master & Back-End Development**
 
-Darrin Reeves : **Git Master, Back-End Development**
+David Rifkin : **Performance Manager & Front-End Development**
 
-David Rifkin : **User Interface Design, Front-End Development**
+Daniella Shin : **Team Lead & User Experience/User Interface Design**

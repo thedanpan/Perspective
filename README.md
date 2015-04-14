@@ -13,5 +13,3 @@ Scott Enriquez : **Architecture, Front-End Development**
 Darrin Reeves : **Git Master, Back-End Development**
 
 David Rifkin : **User Interface Design, Front-End Development**
-
-## [Trello](https://trello.com/b/BvG14dyF/perspective)

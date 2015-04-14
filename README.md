@@ -1,10 +1,9 @@
 # Perspective
 *"Share the worth of your moving picture."*
 
-An iOS app that reimagines the side effects of global hyperconnectivity.
-Users capture personal point of views through video clips and invite friends to contribute their perspectives based on a common theme.
+An iOS app that challenges digital communication norms. Perspective reimagines the side effects of our global hyperconnectivity through a new approach to collaborative storytelling. Users capture personal point of views through video clips and invite collaborators to contribute their perspectives based on a common theme, together creating a story, an experience that can be saved or shared once complete. 
 
-(Swift, Parse, MongoDB, Xcode)
+(Swift, Parse, AWS S3, Xcode)
 
 ## Team Members
 Daniella Shin : **Team Lead, User Experience Design**
